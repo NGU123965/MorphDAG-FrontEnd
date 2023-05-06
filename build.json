@@ -1,0 +1,22 @@
+{
+  "vite": true,
+  "alias": {
+    "venn.js": "venn.js/build/venn.js"
+  },
+  "plugins": [
+    [
+      "build-plugin-moment-locales",
+      {
+        "locales": [
+          "zh-cn"
+        ]
+      }
+    ],
+    [
+      "build-plugin-ignore-style",
+      {
+        "libraryName": "@alifd/next"
+      }
+    ]
+  ]
+}
