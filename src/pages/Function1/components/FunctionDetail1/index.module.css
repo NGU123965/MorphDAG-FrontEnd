@@ -1,0 +1,47 @@
+.content {
+  margin-top: 4px;
+  margin-right: 8px;
+  margin-bottom: 12px;
+  margin-left: 8px;
+}
+
+.mainTable table {
+  border: 1px solid #e6e6e6;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  gap: 80px;
+}
+
+.buttonGroup button {
+  color: #fff;
+  background-color: #1890ff;
+  border: 2px solid#1890ff;
+  border-radius: 4px;
+  height: 40px;
+  width: 160px;
+  margin: 0 8px;
+  padding: 8px 16px;
+  font-size: 20px;
+}
+
+.buttonGroup button:hover {
+  background-color: #40a9ff;
+  border-color: #40a9ff;
+}
+
+div[style="display:flex;justify-content:space-between;"] .next-table {
+  width: calc(50% - 20px);
+}
+
+.table-wrapper {
+  display: flex;
+}
+
+.table-wrapper .table {
+  margin-right: 10px;
+  margin-left: 20px;
+}

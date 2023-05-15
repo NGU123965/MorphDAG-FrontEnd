@@ -1,7 +1,8 @@
 import React from 'react';
 import { ResponsiveGrid } from '@alifd/next';
 import PageHeader from '@/components/PageHeader';
-import FunctionDetail from './components/FunctionDetail';
+import FunctionDetail1 from './components/FunctionDetail1';
+import FunctionDetail2 from './components/FunctionDetail2';
 
 const { Cell } = ResponsiveGrid;
 
@@ -22,8 +23,11 @@ const Function1 = () => {
           description="查询交易及消息相关数据"
         />
       </Cell>
-      <Cell colSpan={12}>
-        <FunctionDetail />
+      <Cell colSpan={6}>
+        <FunctionDetail1 />
+      </Cell>
+      <Cell colSpan={6}>
+        <FunctionDetail2 />
       </Cell>
     </ResponsiveGrid>
   );

@@ -8,14 +8,17 @@ const asideMenuConfig = [
       {
         name: '存储开销检测',
         path: '/dashboard/analysis',
+        icon: 'copy',
       },
       {
         name: '一致性检测',
         path: '/dashboard/workplace',
+        icon: 'chart-bar',
       },
       {
         name: '查询',
         path: '/dashboard/function1',
+        icon: 'calendar',
       },
     ],
   },
