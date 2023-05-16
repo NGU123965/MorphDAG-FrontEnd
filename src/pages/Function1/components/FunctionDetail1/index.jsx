@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { Box, Card, Table, Search } from '@alifd/next';
+import { Box, Card, Table, Search, Tag } from '@alifd/next';
 import styles from './index.module.css';
 
 const FunctionDetail1 = (props) => {
@@ -47,6 +47,16 @@ const FunctionDetail1 = (props) => {
     }
   };
 
+  const renderLevel = (text, index) => {
+    return (
+      <span key={text + index.toString()}>
+        <Tag size="small" color={'blue'}>
+          {text}
+        </Tag>
+      </span>
+    );
+  };
+
   return (
     <div>
       <Box spacing={20} margin={0}>
@@ -80,7 +90,7 @@ const FunctionDetail1 = (props) => {
                   dataIndex="hashes"
                   cell={renderHashCell}
                 />
-                <Table.Column title="查询时延" dataIndex="query_latency" width={100} align="center" />
+                <Table.Column title="查询时延" dataIndex="query_latency" width={100} align="center" cell={renderLevel} />
               </Table>
             </div>
           </Card.Content>

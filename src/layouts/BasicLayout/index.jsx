@@ -4,6 +4,7 @@ import PageNav from './components/PageNav';
 import HeaderAvatar from './components/HeaderAvatar';
 import Logo from './components/Logo';
 import Footer from './components/Footer';
+import { useHistory } from 'react-router-dom';
 
 (function () {
   const throttle = function (type, name, obj = window) {
@@ -64,7 +65,7 @@ export default function BasicLayout({ children }) {
           direction="hoz"
           style={{
             marginRight: '807px',
-          // marginLeft: 'auto',
+            // marginLeft: 'auto',
           }}
         >
           <Logo image="https://img.alicdn.com/tfs/TB1.ZBecq67gK0jSZFHXXa9jVXa-904-826.png" text="BCTS 图链存储" />

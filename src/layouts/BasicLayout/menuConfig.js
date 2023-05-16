@@ -1,6 +1,11 @@
 const headerMenuConfig = [];
 const asideMenuConfig = [
   {
+    name: '主界面',
+    path: '/dashboard/mainpage',
+    icon: 'chart-pie',
+  },
+  {
     name: '功能',
     path: '/',
     icon: 'chart-pie',

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { Box, Card, Table, Search, Pagination, Input } from '@alifd/next';
+import { Box, Card, Table, Search, Pagination, Tag } from '@alifd/next';
 import styles from './index.module.css';
 
 const BasicDetail = (props) => {
@@ -74,6 +74,26 @@ const BasicDetail = (props) => {
     }
   };
 
+  const renderLevel1 = (text, index) => {
+    return (
+      <span key={text + index.toString()}>
+        <Tag size="small" color={'orange'}>
+          {text}
+        </Tag>
+      </span>
+    );
+  };
+
+  const renderLevel2 = (text, index) => {
+    return (
+      <span key={text + index.toString()}>
+        <Tag size="small" color={'green'}>
+          {text}
+        </Tag>
+      </span>
+    );
+  };
+
   return (
     <div>
       <Box spacing={20}>
@@ -97,8 +117,8 @@ const BasicDetail = (props) => {
             <Table dataSource={tableData} hasBorder className={styles.mainTable} align="center">
               <Table.Column title="分片号" dataIndex="shardID" width={200} align="center" />
               <Table.Column title="所在轮次" dataIndex="round" width={200} align="center" />
-              <Table.Column title="键数据大小" dataIndex="chaindataMB" width={200} align="center" />
-              <Table.Column title="状态数据大小" dataIndex="statedataMB" width={200} align="center" />
+              <Table.Column title="键数据大小" dataIndex="chaindataMB" width={200} align="center" cell={renderLevel1} />
+              <Table.Column title="状态数据大小" dataIndex="statedataMB" width={200} align="center" cell={renderLevel2} />
             </Table>
             <Pagination
               // total={(searchLength == -1 || searchLength > 8) ? originalData.length : 1}
