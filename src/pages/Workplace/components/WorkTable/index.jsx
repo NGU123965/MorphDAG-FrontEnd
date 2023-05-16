@@ -7,6 +7,7 @@ import {
   Table,
   Pagination,
   Select,
+  Tag,
 } from '@alifd/next';
 import styles from './index.module.css';
 
@@ -49,7 +50,6 @@ const WorkTable = (props) => {
       const filteredData = originalData.filter((data) => data.round === parseInt(searchValue));
       setSearchLength(filteredData.length);
       setTableData(filteredData);
-      console.log(filteredData.length);
       setLoading(false);
     } else {
       setSearchLength(originalData.length);
@@ -81,6 +81,24 @@ const WorkTable = (props) => {
     }
   };
 
+  const renderLevel = (text, index) => {
+    let color;
+
+    if (text === '不一致') {
+      color = 'red';
+    } else {
+      color = 'green';
+    }
+
+    return (
+      <span key={text + index.toString()}>
+        <Tag size="small" color={color}>
+          {text}
+        </Tag>
+      </span>
+    );
+  };
+
   return (
     <div>
       <Box spacing={20}>
@@ -105,7 +123,7 @@ const WorkTable = (props) => {
               <Table.Column title="分片ID" dataIndex="shardID" width={150} align="center" />
               <Table.Column title="所在轮次" dataIndex="round" width={150} align="center" />
               <Table.Column title="Leader哈希" dataIndex="leader_hash" width={350} align="center" />
-              <Table.Column title="一致性" dataIndex="consistency" width={150} align="center" />
+              <Table.Column title="一致性" dataIndex="consistency" width={150} align="center" cell={renderLevel} />
             </Table>
             <Pagination
               // total={(searchLength == -1 || searchLength > 8) ? originalData.length : 1}
