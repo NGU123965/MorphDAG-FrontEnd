@@ -8,7 +8,7 @@ export default function Logo({ image, text, url }) {
     <div className="logo">
       <Link to={url || '/dashboard/mainpage'} className={styles.logo}>
         {image && <img src={logo} alt="logo" />}
-        <span>{text}</span>
+        <span >{text}</span>
       </Link>
     </div>
   );

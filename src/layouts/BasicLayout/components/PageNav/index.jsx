@@ -82,10 +82,11 @@ const Navigation = (props, context) => {
   return (
     <Nav
       type="normal"
+      direction="ver"
       openKeys={openKeys}
       selectedKeys={[pathname]}
       defaultSelectedKeys={[pathname]}
-      embeddable
+      embeddable="false"
       activeDirection="right"
       iconOnly={isCollapse}
       hasArrow={false}

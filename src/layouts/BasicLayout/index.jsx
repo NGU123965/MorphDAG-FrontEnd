@@ -60,33 +60,25 @@ export default function BasicLayout({ children }) {
         }}
         type="brand"
         fixedHeader={false}
+        device="desktop"
       >
         <Shell.Navigation
           direction="hoz"
           style={{
-            marginRight: '807px',
-            // marginLeft: 'auto',
+            marginRight: '45%',
+            // margin: '45%',
+            // width: 'calc(100% - 207px)',
           }}
         >
-          <Logo image="https://img.alicdn.com/tfs/TB1.ZBecq67gK0jSZFHXXa9jVXa-904-826.png" text="BCTS 图链存储" />
+          <Logo image="./logo.png" text="MorphDAG" />
         </Shell.Navigation>
-        {/* <Shell.Navigation
-          direction="hoz"
-          style={{
-            marginRight: 10,
-          }}
-        >
-          <GlobalSearch />
-        </Shell.Navigation> */}
+
         <Shell.Action>
-          {/* <Notice /> */}
-          {/* <SolutionLink /> */}
           <HeaderAvatar />
         </Shell.Action>
         <Shell.Navigation>
           <PageNav />
         </Shell.Navigation>
-
         <Shell.Content>{children}</Shell.Content>
         <Shell.Footer>
           <Footer />

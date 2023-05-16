@@ -15,6 +15,7 @@ import {
 } from '@alifd/next';
 import mock from './mock';
 import styles from './index.module.css';
+import lj from './架构图.jpg';
 
 const { useState } = React;
 const { Cell } = ResponsiveGrid;
@@ -62,7 +63,7 @@ const WorkTable = (props) => {
   return (
     <div className={styles.workTable}>
       <div className={styles.workerContainer}>
-        <Box flex={1}>
+        {/* <Box flex={1}>
           <Box direction="row" spacing={28}>
             <Avatar size={80} src={person.avatar} className={styles.avatar} />
             <Box>
@@ -73,26 +74,23 @@ const WorkTable = (props) => {
               <Typography.Text className={styles.titleInfo}>{person.email}</Typography.Text>
             </Box>
           </Box>
-          <Tab activeKey={tab} className={styles.tab} onChange={changeTab}>
-            <Tab.Item title="选项卡一" key="1" />
-            <Tab.Item title="选项卡二" key="2" />
-            <Tab.Item title="选项卡三" key="3" />
-          </Tab>
-        </Box>
+        </Box> */}
       </div>
       <div className={styles.workTableContent}>
         <ResponsiveGrid gap={20}>
-          <Cell colSpan={8}>
+          <Cell colSpan={12}>
             <Card
               free
               style={{
                 height: '100%',
+                width: '100%',
               }}
             >
-              <Card.Header title="我的任务" />
+              <Card.Header title={<span className={styles.cardHeaderTitle}>系统架构图</span>} />
               <Card.Divider />
               <Card.Content>
-                <Table
+                <img src={lj} alt="架构图" className={styles.architectureImage} />
+                {/* <Table
                   dataSource={orderList}
                   hasBorder={false}
                   rowSelection={{
@@ -115,11 +113,11 @@ const WorkTable = (props) => {
                 >
                   <Table.Column title="所属阶段" dataIndex="state" width={230} />
                   <Table.Column title="优先级" dataIndex="level" cell={renderLevel} width={150} />
-                </Table>
+                </Table> */}
               </Card.Content>
             </Card>
           </Cell>
-          <Cell colSpan={4}>
+          {/* <Cell colSpan={4}>
             <Card free>
               <Card.Header title="我的日程" />
               <Card.Divider />
@@ -148,7 +146,7 @@ const WorkTable = (props) => {
                 </Box>
               </Card.Content>
             </Card>
-          </Cell>
+          </Cell> */}
           <Cell colSpan={8}>
             <Card free>
               <Card.Header title="近期项目" />
