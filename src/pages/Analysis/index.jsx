@@ -10,16 +10,16 @@ const Analysis = () => {
     <ResponsiveGrid gap={20}>
       <Cell colSpan={12}>
         <PageHeader
-          title="存储开销检测"
+          title={<span style={{ fontSize: 'x-large' }}>存储开销检测</span>}
           breadcrumbs={[
             {
-              name: '功能',
+              name: <span style={{ fontSize: 'larger' }}>功能</span>,
             },
             {
-              name: '存储开销检测',
+              name: <span style={{ fontSize: 'larger' }}>存储开销检测</span>,
             },
           ]}
-          description="实时检测同轮次各分片的存储开销"
+          description={<span style={{ fontSize: 'larger' }}>实时检测同轮次各分片的存储开销</span>}
         />
       </Cell>
       <Cell colSpan={12}>

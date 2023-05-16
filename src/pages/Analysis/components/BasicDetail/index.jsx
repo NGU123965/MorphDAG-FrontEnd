@@ -9,9 +9,9 @@ const BasicDetail = (props) => {
   const [searchValue, setSearchValue] = useState('');
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
-  const [searchLength, setSearchLength] = useState(-1);
-
+  const [pageSize, setPageSize] = useState(5);
+  const [searchData, setSearchData] = useState([]);
+  // eslint-disable-next-line max-len
   const paths = ['./Records-200/info-0.json', './Records-200/info-1.json', './Records-200/info-2.json', './Records-200/info-3.json', './Records-200/info-4.json', './Records-200/info-5.json', './Records-200/info-6.json', './Records-200/info-7.json'];
 
   useEffect(() => {
@@ -29,8 +29,8 @@ const BasicDetail = (props) => {
         }));
         data.push(...jsonData);
       }
-      // setTableData(data.slice(0, pageSize));
-      setTableData([]);
+      setTableData(data.slice(0, pageSize));
+      setSearchData(data);
       setOriginalData(data);
     }
     fetchData();
@@ -40,44 +40,57 @@ const BasicDetail = (props) => {
     if (searchValue != '') {
       setLoading(true);
       const filteredData = originalData.filter((data) => data.round === parseInt(searchValue));
-      setSearchLength(filteredData.length);
-      setTableData(filteredData);
-      console.log(filteredData.length);
+      setTableData(filteredData.slice(0, pageSize));
+      setSearchData(filteredData);
+      setCurrentPage(1);
       setLoading(false);
     } else {
-      setSearchLength(originalData.length);
       setTableData(originalData.slice(0, pageSize));
+      setSearchData(originalData);
     }
   };
 
   const onInputChange = (value) => {
     setSearchValue(value);
-  }
+  };
 
   const onInputClear = () => {
     setSearchValue('');
     setTableData(originalData);
-  }
+  };
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
     const startIndex = (page - 1) * pageSize;
     const endIndex = startIndex + pageSize;
-    setTableData(originalData.slice(startIndex, endIndex));
+    setTableData(searchData.slice(startIndex, endIndex));
   };
 
   const handlePageSizeChange = (pagesize) => {
     setPageSize(pagesize);
-    if (searchValue == '') {
+    if (searchValue == '' && tableData.length == 0) {
       setCurrentPage(1);
-      // setTableData(originalData.slice(0, pagesize));
+      setTableData([]);
+    } else {
+      setTableData(searchData.slice(0, pagesize));
     }
   };
 
   const renderLevel1 = (text, index) => {
+    const size = parseInt(text.substring(0, text.length - 3));
+
+    let color;
+    if (size <= 10) {
+      color = 'green';
+    } else if (size <= 100) {
+      color = 'orange';
+    } else {
+      color = 'red';
+    }
+
     return (
       <span key={text + index.toString()}>
-        <Tag size="small" color={'orange'}>
+        <Tag size="large" color={color}>
           {text}
         </Tag>
       </span>
@@ -85,9 +98,20 @@ const BasicDetail = (props) => {
   };
 
   const renderLevel2 = (text, index) => {
+    const size = parseInt(text.substring(0, text.length - 3));
+
+    let color;
+    if (size <= 10) {
+      color = 'green';
+    } else if (size <= 30) {
+      color = 'orange';
+    } else {
+      color = 'red';
+    }
+
     return (
       <span key={text + index.toString()}>
-        <Tag size="small" color={'green'}>
+        <Tag size="large" color={color}>
           {text}
         </Tag>
       </span>
@@ -98,7 +122,7 @@ const BasicDetail = (props) => {
     <div>
       <Box spacing={20}>
         <Card free>
-          <Card.Header title="系统存储开销详情" />
+          <Card.Header title={<span className={styles.cardTitle}>系统存储开销详情</span>} />
           <Card.Divider />
           <Card.Content>
             <Box align="center">
@@ -111,24 +135,60 @@ const BasicDetail = (props) => {
                 placeholder="请输入轮次号"
                 onChange={onInputChange}
                 onClear={onInputClear}
+                size="large"
               />
-              <p> </p>
             </Box>
-            <Table dataSource={tableData} hasBorder className={styles.mainTable} align="center">
-              <Table.Column title="分片号" dataIndex="shardID" width={200} align="center" />
-              <Table.Column title="所在轮次" dataIndex="round" width={200} align="center" />
-              <Table.Column title="键数据大小" dataIndex="chaindataMB" width={200} align="center" cell={renderLevel1} />
-              <Table.Column title="状态数据大小" dataIndex="statedataMB" width={200} align="center" cell={renderLevel2} />
+            <p> </p>
+            <Table
+              dataSource={tableData}
+              hasBorder
+              className={styles.mainTable}
+              align="center"
+              emptyContent={<div className={styles.emptyText}>没有查询到数据</div>}
+            >
+              <Table.Column
+                title={<div className={styles.tableTitle}>分片号</div>}
+                dataIndex="shardID"
+                width={200}
+                align="center"
+                style={{ fontSize: '16px' }}
+                cell={(value, index, record) => (<div style={{ fontSize: '16px' }}>{value}</div>)}
+              />
+              <Table.Column
+                title={<div className={styles.tableTitle}>所在轮次</div>}
+                dataIndex="round"
+                width={200}
+                align="center"
+                style={{ fontSize: '16px' }}
+                cell={(value, index, record) => (<div style={{ fontSize: '16px' }}>{value}</div>)}
+              />
+              <Table.Column
+                title={<div className={styles.tableTitle}>键数据大小</div>}
+                dataIndex="chaindataMB"
+                width={200}
+                align="center"
+                cell={renderLevel1}
+                style={{ fontSize: '16px' }}
+              />
+              <Table.Column
+                title={<div className={styles.tableTitle}>状态数据大小</div>}
+                dataIndex="statedataMB"
+                width={200}
+                align="center"
+                cell={renderLevel2}
+                style={{ fontSize: '16px' }}
+              />
             </Table>
+            <p> </p>
             <Pagination
-              // total={(searchLength == -1 || searchLength > 8) ? originalData.length : 1}
-              total={tableData.length}
+              total={searchData.length}
               current={currentPage}
               pageSize={pageSize}
               pageSizeSelector="dropdown"
-              pageSizeList={[10, 20, 50, 100]}
+              pageSizeList={[5, 8, 10, 20, 50, 100]}
               onChange={handlePageChange}
               onPageSizeChange={handlePageSizeChange}
+              size="large"
             />
           </Card.Content>
         </Card>

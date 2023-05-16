@@ -3,7 +3,7 @@ const asideMenuConfig = [
   {
     name: '主界面',
     path: '/dashboard/mainpage',
-    icon: 'chart-pie',
+    icon: 'set',
   },
   {
     name: '功能',
