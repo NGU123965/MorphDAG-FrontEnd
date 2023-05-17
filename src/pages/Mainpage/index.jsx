@@ -2,23 +2,25 @@ import * as React from 'react';
 import { ResponsiveGrid } from '@alifd/next';
 import PageHeader from '@/components/PageHeader';
 import WorkTable from './components/Mainpage';
+import styles from './index.module.css';
 
 const { Cell } = ResponsiveGrid;
 
 const Mainpage = () => {
   return (
-    <ResponsiveGrid gap={0}>
-      <Cell colSpan={12}>
-        <PageHeader
-          title="主页"
-          description="欢迎来到MorphDAG！"
-        />
-      </Cell>
+    <div className="container">
+      <ResponsiveGrid gap={0} >
+        <Cell colSpan={12}>
+          <PageHeader
+            title={<div className="welcome-text">Welcome to MorphDAG</div>}
+          />
+        </Cell>
 
-      <Cell colSpan={12}>
-        <WorkTable />
-      </Cell>
-    </ResponsiveGrid>
+        <Cell colSpan={12}>
+          <WorkTable />
+        </Cell>
+      </ResponsiveGrid>
+    </div>
   );
 };
 

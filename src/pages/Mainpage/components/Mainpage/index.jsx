@@ -16,6 +16,7 @@ import {
 import mock from './mock';
 import styles from './index.module.css';
 import lj from './架构图.jpg';
+import background from './universe.jpg';
 
 const { useState } = React;
 const { Cell } = ResponsiveGrid;
@@ -61,7 +62,7 @@ const WorkTable = (props) => {
   };
 
   return (
-    <div className={styles.workTable}>
+    <div className={styles.workTable} >
       <div className={styles.workerContainer}>
         {/* <Box flex={1}>
           <Box direction="row" spacing={28}>
@@ -147,7 +148,7 @@ const WorkTable = (props) => {
               </Card.Content>
             </Card>
           </Cell> */}
-          <Cell colSpan={8}>
+          {/* <Cell colSpan={8}>
             <Card free>
               <Card.Header title="近期项目" />
               <Card.Divider />
@@ -207,7 +208,7 @@ const WorkTable = (props) => {
                 </List>
               </Card.Content>
             </Card>
-          </Cell>
+          </Cell> */}
           <Cell colSpan={8}>
             <Card free>
               <Card.Header title="动态" />

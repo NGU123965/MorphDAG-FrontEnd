@@ -8,11 +8,13 @@
 }
 
 .title {
+  width: 100%;
   display: block;
-  color: var(--color-text1-4, #333);
-  font-weight: var(--font-weight-3, bold);
-  font-size: var(--font-size-title, 20px);
-  line-height: 1.5;
+  color: #333;
+  font-weight: bold;
+  font-size: 66px;
+  line-height: 1;
+  text-align: center;
 }
 
 .description {
