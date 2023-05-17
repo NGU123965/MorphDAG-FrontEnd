@@ -65,7 +65,7 @@ export default function BasicLayout({ children }) {
         <Shell.Navigation
           direction="hoz"
           style={{
-            marginRight: '45%',
+            marginRight: '35%',
             // margin: '45%',
             // width: 'calc(100% - 207px)',
           }}

@@ -130,54 +130,6 @@ const WorkTable = (props) => {
               </Card.Content>
             </Card>
           </Cell>
-          {/* <Cell colSpan={8}>
-            <Card free>
-              <Card.Header title="动态" />
-              <Card.Divider />
-              <Card.Content>
-                <List>
-                  {updateList.map((one, idx) => {
-                    let title;
-
-                    switch (one.action) {
-                      case 'create':
-                        title = (
-                          <div key={idx}>
-                            {one.name} 在 <a href="/">{one.project}</a> 新建项目 <a href="/">{one.projectItem}</a>{' '}
-                          </div>
-                        );
-                        break;
-
-                      case 'release':
-                        title = (
-                          <div key={idx}>
-                            {one.name} 将 <a href="/">{one.project}</a> 更新至发布状态{' '}
-                          </div>
-                        );
-                        break;
-
-                      case 'note':
-                        title = (
-                          <div key={idx}>
-                            {one.name} 在 <a href="/">{one.project}</a> 发布了 <a href="/">{one.projectItem}</a>{' '}
-                          </div>
-                        );
-                        break;
-
-                      default:
-                        break;
-                    }
-
-                    return (
-                      <List.Item key={idx} title={title} media={<Avatar src={one.avatar} />}>
-                        {one.time}
-                      </List.Item>
-                    );
-                  })}
-                </List>
-              </Card.Content>
-            </Card>
-          </Cell> */}
         </ResponsiveGrid>
       </div>
     </div>
