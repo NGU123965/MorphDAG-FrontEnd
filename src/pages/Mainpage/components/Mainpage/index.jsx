@@ -63,22 +63,33 @@ const WorkTable = (props) => {
 
   return (
     <div className={styles.workTable} >
-      <div className={styles.workerContainer}>
-        {/* <Box flex={1}>
-          <Box direction="row" spacing={28}>
-            <Avatar size={80} src={person.avatar} className={styles.avatar} />
-            <Box>
-              <Typography.Text className={styles.titleName}>
-                {person.surname}
-                {person.name}
-              </Typography.Text>
-              <Typography.Text className={styles.titleInfo}>{person.email}</Typography.Text>
-            </Box>
-          </Box>
-        </Box> */}
-      </div>
+      <div className={styles.workerContainer} />
       <div className={styles.workTableContent}>
         <ResponsiveGrid gap={20}>
+          <Cell colSpan={12}>
+            <Card free>
+              {/* <Card.Header
+                title="快捷入口"
+                extra={
+                  <Button type="primary" size="large" text component="a" href="#/dashboard/function1">
+                    设置
+                  </Button>
+                }
+              /> */}
+              <Card.Divider />
+              <Card.Content>
+                <Box spacing={[20, 50]} direction="row" wrap>
+                  {entranceList.map((item, idx) => {
+                    return (
+                      <Button type="primary" key={idx} size="large" text component="a" href={item.link}>
+                        {item.name}
+                      </Button>
+                    );
+                  })}
+                </Box>
+              </Card.Content>
+            </Card>
+          </Cell>
           <Cell colSpan={12}>
             <Card
               free
@@ -118,98 +129,7 @@ const WorkTable = (props) => {
               </Card.Content>
             </Card>
           </Cell>
-          {/* <Cell colSpan={4}>
-            <Card free>
-              <Card.Header title="我的日程" />
-              <Card.Divider />
-              <Card.Content>
-                <Box spacing={10}>
-                  <Calendar shape="panel" />
-                  <Typography.Text className={styles.planNumber}>
-                    共 <span className={styles.strong}>{timeLineList.length}</span>个日程
-                  </Typography.Text>
-                  <Timeline>
-                    {timeLineList.map((item) => (
-                      <TimelineItem
-                        key={item.planTime}
-                        title={item.planName}
-                        content={item.planAddress}
-                        timeLeft={
-                          <>
-                            <span className={styles.planTime}>{item.planTime}</span>
-                            <br />
-                            <span className={styles.planDuring}>{item.planDuring}</span>
-                          </>
-                        }
-                      />
-                    ))}
-                  </Timeline>
-                </Box>
-              </Card.Content>
-            </Card>
-          </Cell> */}
           {/* <Cell colSpan={8}>
-            <Card free>
-              <Card.Header title="近期项目" />
-              <Card.Divider />
-              <Card.Content>
-                <List>
-                  {projectList.map((project) => {
-                    return (
-                      <List.Item
-                        key={project.projectName}
-                        title={project.projectName}
-                        media={<Avatar src={project.img} />}
-                      >
-                        {project.projectDesc}
-                      </List.Item>
-                    );
-                  })}
-                  <List.Item>查看全部任务</List.Item>
-                </List>
-              </Card.Content>
-            </Card>
-          </Cell>
-          <Cell colSpan={4}>
-            <Card
-              free
-              style={{
-                height: '100%',
-              }}
-            >
-              <Card.Header title="我的项目" />
-              <Card.Divider />
-              <Card.Content>
-                <List>
-                  <List.Item
-                    title="Fusion Design"
-                    media={<Avatar src="https://img.alicdn.com/tfs/TB1SFZAvQL0gK0jSZFAXXcA9pXa-200-200.png" />}
-                  />
-                  <List.Item
-                    title="Alibaba ICS"
-                    media={<Avatar src="https://img.alicdn.com/tfs/TB1QwMzvHr1gK0jSZR0XXbP8XXa-200-200.png" />}
-                  />
-                  <List.Item
-                    title="Retcode 前端监控"
-                    media={<Avatar src="https://img.alicdn.com/tfs/TB1qxgDvG61gK0jSZFlXXXDKFXa-200-200.png" />}
-                  />
-                  <List.Item
-                    title="新零售事业部"
-                    media={<Avatar src="https://img.alicdn.com/tfs/TB1TfwDvQT2gK0jSZFkXXcIQFXa-200-200.png" />}
-                  />
-                  <List.Item
-                    title="前端物料中心"
-                    media={<Avatar src="https://img.alicdn.com/tfs/TB1GgMzvHr1gK0jSZR0XXbP8XXa-200-200.png" />}
-                  />
-                  <List.Item
-                    title="大财鲸"
-                    media={<Avatar src="https://img.alicdn.com/tfs/TB1tHozvQP2gK0jSZPxXXacQpXa-200-200.png" />}
-                  />
-                </List>
-              </Card.Content>
-            </Card>
-          </Cell> */}
-          <Cell colSpan={8}>
             <Card free>
               <Card.Header title="动态" />
               <Card.Divider />
@@ -256,31 +176,7 @@ const WorkTable = (props) => {
                 </List>
               </Card.Content>
             </Card>
-          </Cell>
-          <Cell colSpan={4}>
-            <Card free>
-              <Card.Header
-                title="快捷入口"
-                extra={
-                  <Button type="primary" size="large" text component="a" href="#/">
-                    设置
-                  </Button>
-                }
-              />
-              <Card.Divider />
-              <Card.Content>
-                <Box spacing={[20, 50]} direction="row" wrap>
-                  {entranceList.map((item, idx) => {
-                    return (
-                      <Button key={idx} size="large" text component="a" href={item.link}>
-                        {item.name}
-                      </Button>
-                    );
-                  })}
-                </Box>
-              </Card.Content>
-            </Card>
-          </Cell>
+          </Cell> */}
         </ResponsiveGrid>
       </div>
     </div>
