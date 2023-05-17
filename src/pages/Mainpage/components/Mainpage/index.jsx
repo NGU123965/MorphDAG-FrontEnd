@@ -77,6 +77,7 @@ const WorkTable = (props) => {
                 }
               /> */}
               <Card.Divider />
+
               <Card.Content>
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {entranceList.map((item, idx) => {
