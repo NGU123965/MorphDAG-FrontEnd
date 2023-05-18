@@ -1,7 +1,7 @@
 const headerMenuConfig = [];
 const asideMenuConfig = [
   {
-    name: 'Home',
+    name: '主页',
     path: '/dashboard/mainpage',
     icon: 'set',
   },
