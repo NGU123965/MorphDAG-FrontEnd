@@ -22,21 +22,14 @@ const { useState } = React;
 const { Cell } = ResponsiveGrid;
 const TimelineItem = Timeline.Item;
 const DEFAULT_DATA = {
-  person: {
-    avatar: 'https://img.alicdn.com/tfs/TB1XdnvvUY1gK0jSZFCXXcwqXXa-500-500.png',
-    name: 'Demo',
-    email: 'jiangxiao@hust.edu.cn',
-  },
-  orderList: mock.orderList,
-  projectList: mock.projectList,
-  timeLineList: mock.timeLineList,
-  updateList: mock.updateList,
-  entranceList: mock.entrances,
+  firstList: mock.first,
+  secondList: mock.second,
+  thirdList: mock.third,
 };
 
 const WorkTable = (props) => {
   const { dataSource = DEFAULT_DATA } = props;
-  const { person, orderList, projectList, timeLineList, updateList, entranceList } = dataSource;
+  const { firstList, secondList, thirdList } = dataSource;
   const [tab, setTab] = useState('1');
 
   const changeTab = (val) => setTab(val);
@@ -79,9 +72,9 @@ const WorkTable = (props) => {
 
               <Card.Content>
                 <Box spacing={[20, 50]} direction="row" wrap>
-                  {entranceList.map((item, idx) => {
+                  {firstList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link}>
+                      <Button type="primary" key={idx} size="large" component="b" href={item.link}>
                         {item.name}
                       </Button>
                     );
@@ -103,9 +96,9 @@ const WorkTable = (props) => {
 
               <Card.Content>
                 <Box spacing={[20, 50]} direction="row" wrap>
-                  {entranceList.map((item, idx) => {
+                  {secondList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link}>
+                      <Button type="primary" key={idx} size="large" component="b" href={item.link}>
                         {item.name}
                       </Button>
                     );
@@ -127,9 +120,9 @@ const WorkTable = (props) => {
 
               <Card.Content>
                 <Box spacing={[20, 50]} direction="row" wrap>
-                  {entranceList.map((item, idx) => {
+                  {thirdList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link}>
+                      <Button type="primary" key={idx} size="large" component="b" href={item.link}>
                         {item.name}
                       </Button>
                     );
