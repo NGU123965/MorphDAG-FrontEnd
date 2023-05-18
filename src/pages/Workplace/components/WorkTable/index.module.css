@@ -148,3 +148,20 @@
 .avatar {
   background: #c2dae1;
 }
+
+.cardTitle {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.tableTitle {
+  font-weight: bold;
+}
+
+.mainTable {
+  border: 1px solid #e6e6e6;
+}
+
+.emptyText {
+  font-size: x-large;
+}

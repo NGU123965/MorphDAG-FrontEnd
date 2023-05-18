@@ -1,6 +1,14 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { Box, Card, Table, Search, Pagination, Tag } from '@alifd/next';
+import {
+  Box,
+  Search,
+  Card,
+  Table,
+  Pagination,
+  Select,
+  Tag,
+} from '@alifd/next';
 import styles from './index.module.css';
 
 const BasicDetail = (props) => {
@@ -29,8 +37,10 @@ const BasicDetail = (props) => {
         }));
         data.push(...jsonData);
       }
-      setTableData(data.slice(0, pageSize));
-      setSearchData(data);
+      // setTableData(data.slice(0, pageSize));
+      // setSearchData(data);
+      setTableData([]);
+      setSearchData([]);
       setOriginalData(data);
     }
     fetchData();
@@ -45,8 +55,10 @@ const BasicDetail = (props) => {
       setCurrentPage(1);
       setLoading(false);
     } else {
-      setTableData(originalData.slice(0, pageSize));
-      setSearchData(originalData);
+      // setTableData(originalData.slice(0, pageSize));
+      // setSearchData(originalData);
+      setTableData([]);
+      setSearchData([]);
     }
   };
 
@@ -80,9 +92,9 @@ const BasicDetail = (props) => {
     const size = parseInt(text.substring(0, text.length - 3));
 
     let color;
-    if (size <= 10) {
+    if (size < 10) {
       color = 'green';
-    } else if (size <= 100) {
+    } else if (size < 100) {
       color = 'orange';
     } else {
       color = 'red';
@@ -101,9 +113,9 @@ const BasicDetail = (props) => {
     const size = parseInt(text.substring(0, text.length - 3));
 
     let color;
-    if (size <= 10) {
+    if (size < 10) {
       color = 'green';
-    } else if (size <= 30) {
+    } else if (size < 30) {
       color = 'orange';
     } else {
       color = 'red';
@@ -151,16 +163,16 @@ const BasicDetail = (props) => {
                 dataIndex="shardID"
                 width={200}
                 align="center"
-                style={{ fontSize: '16px' }}
-                cell={(value, index, record) => (<div style={{ fontSize: '16px' }}>{value}</div>)}
+                style={{ fontSize: 'x-large' }}
+                cell={(value, index, record) => (<div style={{ fontSize: 'x-large' }}>{value}</div>)}
               />
               <Table.Column
                 title={<div className={styles.tableTitle}>所在轮次</div>}
                 dataIndex="round"
                 width={200}
                 align="center"
-                style={{ fontSize: '16px' }}
-                cell={(value, index, record) => (<div style={{ fontSize: '16px' }}>{value}</div>)}
+                style={{ fontSize: 'x-large' }}
+                cell={(value, index, record) => (<div style={{ fontSize: 'x-large' }}>{value}</div>)}
               />
               <Table.Column
                 title={<div className={styles.tableTitle}>键数据大小</div>}
@@ -168,7 +180,7 @@ const BasicDetail = (props) => {
                 width={200}
                 align="center"
                 cell={renderLevel1}
-                style={{ fontSize: '16px' }}
+                style={{ fontSize: 'x-large' }}
               />
               <Table.Column
                 title={<div className={styles.tableTitle}>状态数据大小</div>}
@@ -176,7 +188,7 @@ const BasicDetail = (props) => {
                 width={200}
                 align="center"
                 cell={renderLevel2}
-                style={{ fontSize: '16px' }}
+                style={{ fontSize: 'x-large' }}
               />
             </Table>
             <p> </p>

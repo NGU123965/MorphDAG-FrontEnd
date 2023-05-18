@@ -45,3 +45,24 @@ div[style="display:flex;justify-content:space-between;"] .next-table {
   margin-right: 10px;
   margin-left: 20px;
 }
+
+.cardTitle {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.cardHeader {
+  text-align: center;
+}
+
+.tableTitle {
+  font-weight: bold;
+}
+
+.mainTable {
+  border: 1px solid #e6e6e6;
+}
+
+.emptyText {
+  font-size: x-large;
+}

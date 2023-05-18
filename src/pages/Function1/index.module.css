@@ -1,0 +1,10 @@
+/* index.module.css */
+
+.customTitle {
+  font-size: 30px; /* 调整面包屑导航字体大小 */
+  width: 50px; /* 根据需要调整宽度 */
+  white-space: nowrap; /* 防止换行 */
+  overflow-x: visible; /* 溢出部分隐藏 */
+  overflow-y: visible; /* 溢出部分隐藏 */
+  text-overflow: ellipsis; /* 溢出文本显示省略号 */
+}

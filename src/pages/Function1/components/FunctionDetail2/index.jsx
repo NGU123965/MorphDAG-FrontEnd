@@ -1,54 +1,71 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { Box, Card, Table, Search, Tag } from '@alifd/next';
+import {
+  Box,
+  Search,
+  Card,
+  Table,
+  Pagination,
+  Select,
+  Tag,
+} from '@alifd/next';
 import styles from './index.module.css';
 
 const FunctionDetail2 = (props) => {
-  const [tableData2, setTableData2] = useState([]);
-  const [originalData2, setOriginalData2] = useState([]);
-  const [searchValue2, setSearchValue2] = useState('');
-  const [loading2, setLoading2] = useState(false);
+  const [tableData, setTableData] = useState([]);
+  const [originalData, setOriginalData] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
+  const [loading1, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(5);
+  const [searchData, setSearchData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const data2 = [];
-      const response2 = await fetch('./Records-200/query_results_1.json');
-      const json2 = await response2.json();
-      const { records: records2 } = json2;
-      const jsonData2 = Object.keys(records2).map((key) => ({
-        hashes: records2[key].hashes,
+      const data = [];
+      const response = await fetch('./Records-200/query_results_1.json');
+      const json = await response.json();
+      const { records } = json;
+      const jsonData = Object.keys(records).map((key) => ({
+        hashes: records[key].hashes,
         round: parseInt(key),
-        query_latency: records2[key].query_latency,
+        query_latency: records[key].query_latency,
       }));
-      data2.push(...jsonData2);
-      setTableData2([]);
-      setOriginalData2(data2);
+      data.push(...jsonData);
+      setTableData([]);
+      setOriginalData(data);
     }
     fetchData();
   }, []);
 
-  const onSearchClick2 = (value) => {
-    setSearchValue2(value);
-    setLoading2(true);
+  const onSearchClick = (value) => {
+    setSearchValue(value);
+    setLoading(true);
     let filteredData;
     if (!isNaN(parseInt(value))) {
-      filteredData = originalData2.filter((data) => data.round === parseInt(value));
+      filteredData = originalData.filter((data) => data.round === parseInt(value));
     } else {
-      filteredData = originalData2.filter((data) => data.hashes.includes(value));
+      filteredData = originalData.filter((data) => data.hashes.includes(value));
     }
-    setTableData2(filteredData);
-    setLoading2(false);
-  };
-
-  const onInputClear2 = () => {
-    setSearchValue2('');
-    setTableData2(originalData2);
+    setTableData(filteredData);
+    setLoading(false);
   };
 
   const renderLevel = (text, index) => {
+    const size = parseInt(text.substring(0, text.length - 2));
+
+    let color;
+    if (size < 100) {
+      color = 'green';
+    } else if (size < 100) {
+      color = 'orange';
+    } else {
+      color = 'red';
+    }
+
     return (
       <span key={text + index.toString()}>
-        <Tag size="small" color={'blue'}>
+        <Tag size="large" color={color}>
           {text}
         </Tag>
       </span>
@@ -57,47 +74,60 @@ const FunctionDetail2 = (props) => {
 
   return (
     <div>
-      <Box spacing={20} margin={0}>
+      <Box spacing={20}>
         <Card free>
-          <Card.Header title="交易查询二" />
+          <Card.Header className={styles.cardHeader} title={<span className={styles.cardTitle}>轮次交易查询</span>} />
           <Card.Divider />
           <Card.Content>
-            <Box flex={1} display="flex" alignItems="center" justifyContent="center">
-              <p> </p>
-            </Box>
-            <div style={{ marginRight: '30px', marginLeft: '10px' }}>
+            <Box align="center">
               <Search
                 type="primary"
                 hasIcon={false}
-                searchText="查询消息"
-                onSearch={onSearchClick2}
-                placeholder="请输入轮次号"
-                onClear={onInputClear2}
+                searchText="查询交易"
+                onSearch={onSearchClick}
+                placeholder="请输入交易的哈希值"
+                size="large"
               />
-              <p> </p>
-              <Table
-                dataSource={tableData2}
-                hasBorder
-                className={styles.mainTable}
+            </Box>
+            <p> </p>
+            <Table
+              dataSource={tableData}
+              hasBorder
+              className={styles.mainTable}
+              align="center"
+              emptyContent={<div className={styles.emptyText}>没有查询到数据</div>}
+            >
+              <Table.Column
+                title={<div className={styles.tableTitle}>所在轮次</div>}
+                dataIndex="round"
+                width={110}
                 align="center"
-              >
-                <Table.Column title="所在轮次" dataIndex="round" width={90} align="center" />
-                <Table.Column
-                  title="交易哈希"
-                  width={540}
-                  align="center"
-                  dataIndex="hashes"
-                  cell={(value, index, record) => (
-                    <div>
-                      {value.map((hash) => (
-                        <div key={hash}>[{hash}]</div>
-                      ))}
-                    </div>
-                  )}
-                />
-                <Table.Column title="查询时延" dataIndex="query_latency" width={100} align="center" cell={renderLevel} />
-              </Table>
-            </div>
+                style={{ fontSize: 'x-large' }}
+                cell={(value, index, record) => (<div style={{ fontSize: 'x-large' }}>{value}</div>)}
+              />
+              <Table.Column
+                title={<div className={styles.tableTitle}>交易哈希</div>}
+                dataIndex="hashes"
+                width={380}
+                align="center"
+                style={{ fontSize: 'x-large' }}
+                cell={(value, index, record) => (
+                  <div style={{ fontSize: 'x-large' }}>
+                    {value.map((hash) => (
+                      <div key={hash}>[{hash}]</div>
+                    ))}
+                  </div>
+                )}
+              />
+              <Table.Column
+                title={<div className={styles.tableTitle}>查询延迟</div>}
+                dataIndex="query_latency"
+                width={110}
+                align="center"
+                cell={renderLevel}
+                style={{ fontSize: 'x-large' }}
+              />
+            </Table>
           </Card.Content>
         </Card>
       </Box>

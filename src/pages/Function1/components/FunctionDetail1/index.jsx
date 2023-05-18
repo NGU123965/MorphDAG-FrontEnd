@@ -1,98 +1,134 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { Box, Card, Table, Search, Tag } from '@alifd/next';
+import {
+  Box,
+  Search,
+  Card,
+  Table,
+  Pagination,
+  Select,
+  Tag,
+} from '@alifd/next';
 import styles from './index.module.css';
 
 const FunctionDetail1 = (props) => {
-  const [tableData1, setTableData1] = useState([]);
-  const [originalData1, setOriginalData1] = useState([]);
-  const [searchValue1, setSearchValue1] = useState('');
-  const [loading1, setLoading1] = useState(false);
+  const [tableData, setTableData] = useState([]);
+  const [originalData, setOriginalData] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(5);
+  const [searchData, setSearchData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const data1 = [];
-      const response1 = await fetch('./Records-200/query_results_1.json');
-      const json1 = await response1.json();
-      const { records } = json1;
-      const jsonData1 = Object.keys(records).map((key) => ({
+      const data = [];
+      const response = await fetch('./Records-200/query_results_1.json');
+      const json = await response.json();
+      const { records } = json;
+      const jsonData = Object.keys(records).map((key) => ({
         hashes: records[key].hashes,
         round: parseInt(key),
         query_latency: records[key].query_latency,
       }));
-      data1.push(...jsonData1);
-      setTableData1([]);
-      setOriginalData1(data1);
+      data.push(...jsonData);
+      setTableData([]);
+      setOriginalData(data);
     }
     fetchData();
   }, []);
 
-  const onSearchClick1 = (value) => {
+  const onSearchClick = (value) => {
     // setIsSearchClicked(true);
-    setSearchValue1(value);
-    setLoading1(true);
-    let filteredData1;
+    setSearchValue(value);
+    setLoading(true);
+    let filteredData;
     if (value) {
-      filteredData1 = originalData1.filter((data) => data.hashes.includes(value));
+      filteredData = originalData.filter((data) => data.hashes.includes(value));
     }
-    setTableData1(filteredData1);
-    setLoading1(false);
-  };
-
-  const renderHashCell = (value, index, record) => {
-    if (record.hashes.includes(searchValue1)) {
-      return <div>[{searchValue1}]</div>;
-    } else {
-      return <div>[{value}]</div>;
-    }
+    setTableData(filteredData);
+    setLoading(false);
   };
 
   const renderLevel = (text, index) => {
+    const size = parseInt(text.substring(0, text.length - 2));
+
+    let color;
+    if (size < 100) {
+      color = 'green';
+    } else if (size < 100) {
+      color = 'orange';
+    } else {
+      color = 'red';
+    }
+
     return (
       <span key={text + index.toString()}>
-        <Tag size="small" color={'blue'}>
+        <Tag size="large" color={color}>
           {text}
         </Tag>
       </span>
     );
   };
 
+  const renderHashCell = (value, index, record) => {
+    if (record.hashes.includes(searchValue)) {
+      return <div style={{ fontSize: 'x-large' }}>[{searchValue}]</div>;
+    } else {
+      return <div style={{ fontSize: 'x-large' }}>[{value}]</div>;
+    }
+  };
+
   return (
     <div>
-      <Box spacing={20} margin={0}>
+      <Box spacing={20}>
         <Card free>
-          <Card.Header title="交易查询一" />
+          <Card.Header className={styles.cardHeader} title={<span className={styles.cardTitle}>单笔交易查询</span>} />
           <Card.Divider />
           <Card.Content>
-            <Box flex={1} display="flex" alignItems="center" justifyContent="center">
-              <p> </p>
-            </Box>
-            <div style={{ marginLeft: '30px', marginRight: '10px' }}>
+            <Box align="center">
               <Search
                 type="primary"
                 hasIcon={false}
                 searchText="查询交易"
-                onSearch={onSearchClick1}
-                placeholder="请输入哈希值"
+                onSearch={onSearchClick}
+                placeholder="请输入交易的哈希值"
+                size="large"
               />
-              <p> </p>
-              <Table
-                dataSource={tableData1}
-                hasBorder
-                className={styles.mainTable}
+            </Box>
+            <p> </p>
+            <Table
+              dataSource={tableData}
+              hasBorder
+              className={styles.mainTable}
+              align="center"
+              emptyContent={<div className={styles.emptyText}>没有查询到数据</div>}
+            >
+              <Table.Column
+                title={<div className={styles.tableTitle}>所在轮次</div>}
+                dataIndex="round"
+                width={120}
                 align="center"
-              >
-                <Table.Column title="所在轮次" dataIndex="round" width={90} align="center" />
-                <Table.Column
-                  title="交易哈希"
-                  width={540}
-                  align="center"
-                  dataIndex="hashes"
-                  cell={renderHashCell}
-                />
-                <Table.Column title="查询时延" dataIndex="query_latency" width={100} align="center" cell={renderLevel} />
-              </Table>
-            </div>
+                style={{ fontSize: 'x-large' }}
+                cell={(value, index, record) => (<div style={{ fontSize: 'x-large' }}>{value}</div>)}
+              />
+              <Table.Column
+                title={<div className={styles.tableTitle}>交易哈希</div>}
+                dataIndex="hashes"
+                width={360}
+                align="center"
+                style={{ fontSize: 'x-large' }}
+                cell={renderHashCell}
+              />
+              <Table.Column
+                title={<div className={styles.tableTitle}>查询延迟</div>}
+                dataIndex="query_latency"
+                width={120}
+                align="center"
+                cell={renderLevel}
+                style={{ fontSize: 'x-large' }}
+              />
+            </Table>
           </Card.Content>
         </Card>
       </Box>
@@ -100,4 +136,4 @@ const FunctionDetail1 = (props) => {
   );
 };
 
-export default FunctionDetail1
+export default FunctionDetail1;
