@@ -66,7 +66,7 @@ const WorkTable = (props) => {
       <div className={styles.workerContainer} />
       <div className={styles.workTableContent}>
         <ResponsiveGrid gap={20}>
-          <Cell colSpan={12}>
+          <Cell colSpan={4}>
             <Card free>
               {/* <Card.Header
                 title="快捷入口"
@@ -81,7 +81,55 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {entranceList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" text component="a" href={item.link}>
+                      <Button type="primary" key={idx} size="large" component="a" href={item.link}>
+                        {item.name}
+                      </Button>
+                    );
+                  })}
+                </Box>
+              </Card.Content>
+            </Card>
+          </Cell>
+          <Cell colSpan={4}>
+            <Card free>
+              {/* <Card.Header
+                title="快捷入口"
+                extra={
+                  <Button type="primary" size="large" text component="a" href="#/dashboard/function1">
+                    设置
+                  </Button>
+                }
+              /> */}
+
+              <Card.Content>
+                <Box spacing={[20, 50]} direction="row" wrap>
+                  {entranceList.map((item, idx) => {
+                    return (
+                      <Button type="primary" key={idx} size="large" component="a" href={item.link}>
+                        {item.name}
+                      </Button>
+                    );
+                  })}
+                </Box>
+              </Card.Content>
+            </Card>
+          </Cell>
+          <Cell colSpan={4}>
+            <Card free>
+              {/* <Card.Header
+                title="快捷入口"
+                extra={
+                  <Button type="primary" size="large" text component="a" href="#/dashboard/function1">
+                    设置
+                  </Button>
+                }
+              /> */}
+
+              <Card.Content>
+                <Box spacing={[20, 50]} direction="row" wrap>
+                  {entranceList.map((item, idx) => {
+                    return (
+                      <Button type="primary" key={idx} size="large" component="a" href={item.link}>
                         {item.name}
                       </Button>
                     );
