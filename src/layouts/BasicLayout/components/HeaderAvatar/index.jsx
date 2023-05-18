@@ -9,7 +9,7 @@ const UserProfile = ({ name, avatar, mail }) => {
   return (
     <div className={styles.profile}>
       <div className={styles.avatar}>
-        <Avatar src={avatar} alt="用户头像" />
+        <Avatar alt="用户头像" />
       </div>
       <div className={styles.content}>
         <h4>{name}</h4>
@@ -25,7 +25,6 @@ const HeaderAvatar = (props) => {
     <Popup
       trigger={
         <div className={styles.headerAvatar}>
-          <Avatar size="small" src={avatar} alt="用户头像" />
           <span
             style={{
               marginLeft: 10,
@@ -60,7 +59,5 @@ const HeaderAvatar = (props) => {
 
 HeaderAvatar.defaultProps = {
   name: 'Demo',
-  mail: 'jiangxiao@hust.edu.cn',
-  avatar: './src/layouts/BasicLayout/components/HeaderAvatar/logo.png',
 };
 export default HeaderAvatar;

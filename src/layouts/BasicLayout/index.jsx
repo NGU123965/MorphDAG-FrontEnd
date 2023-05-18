@@ -65,17 +65,17 @@ export default function BasicLayout({ children }) {
         <Shell.Navigation
           direction="hoz"
           style={{
-            marginRight: '35%',
+            marginRight: '0%',
             // margin: '45%',
             // width: 'calc(100% - 207px)',
           }}
         >
-          <Logo image="./logo.png" text="MorphDAG" />
+          <Logo image="./logo.png" />
         </Shell.Navigation>
 
-        <Shell.Action>
+        {/* <Shell.Action>
           <HeaderAvatar />
-        </Shell.Action>
+        </Shell.Action> */}
         <Shell.Navigation>
           <PageNav />
         </Shell.Navigation>

@@ -102,6 +102,16 @@
   display: inline-block; 
 }
 
+.workTable .button {
+  width: 100%;  
+  display: inline-block; 
+}
+
+.centeredContent {
+  display: flex;
+  justify-content: center;
+}
+
 .workTable .cardHeaderTitle {
   font-size: 40px;
   font-weight: bold;

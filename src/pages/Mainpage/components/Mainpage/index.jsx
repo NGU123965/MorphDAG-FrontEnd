@@ -40,11 +40,11 @@ const WorkTable = (props) => {
                 }
               /> */}
 
-              <Card.Content>
-                <Box spacing={[20, 50]} direction="row" wrap>
+              <Card.Content className={styles.centeredContent}>
+                <Box spacing={[20, 50]} direction="row" wrap >
                   {firstList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link}>
+                      <Button type="primary" key={idx} size="large" component="a" href={item.link} >
                         {item.name}
                       </Button>
                     );
@@ -53,9 +53,10 @@ const WorkTable = (props) => {
               </Card.Content>
             </Card>
           </Cell>
+
           <Cell colSpan={4}>
             <Card free>
-              <Card.Content>
+              <Card.Content className={styles.centeredContent}>
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {secondList.map((item, idx) => {
                     return (
@@ -68,9 +69,10 @@ const WorkTable = (props) => {
               </Card.Content>
             </Card>
           </Cell>
+
           <Cell colSpan={4}>
             <Card free>
-              <Card.Content>
+              <Card.Content className={styles.centeredContent}>
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {thirdList.map((item, idx) => {
                     return (
