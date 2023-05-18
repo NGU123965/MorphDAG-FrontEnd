@@ -76,7 +76,6 @@ const WorkTable = (props) => {
                   </Button>
                 }
               /> */}
-              <Card.Divider />
 
               <Card.Content>
                 <Box spacing={[20, 50]} direction="row" wrap>
