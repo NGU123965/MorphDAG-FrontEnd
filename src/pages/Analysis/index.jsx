@@ -16,7 +16,7 @@ const Analysis = () => {
               name: <span style={{ fontSize: 'larger' }}>功能</span>,
             },
             {
-              name: <span style={{ fontSize: 'larger' }}>存储开销检测</span>,
+              name: <span style={{ fontSize: 'small' }}>存储开销检测</span>,
             },
           ]}
           description={<span style={{ fontSize: 'larger' }}>实时检测同轮次各分片的存储开销</span>}
