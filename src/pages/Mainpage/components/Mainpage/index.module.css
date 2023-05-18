@@ -93,9 +93,13 @@
   border: 1px solid #ccc;
 }
 
+.workTable {
+  text-align: center;
+}
 .workTable .architectureImage {
-  width: 100%;  
-  height: auto; 
+  width: 80%;  
+  height: auto;
+  display: inline-block; 
 }
 
 .workTable .cardHeaderTitle {

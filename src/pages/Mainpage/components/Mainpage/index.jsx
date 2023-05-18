@@ -85,20 +85,11 @@ const WorkTable = (props) => {
           </Cell>
           <Cell colSpan={4}>
             <Card free>
-              {/* <Card.Header
-                title="快捷入口"
-                extra={
-                  <Button type="primary" size="large" text component="a" href="#/dashboard/function1">
-                    设置
-                  </Button>
-                }
-              /> */}
-
               <Card.Content>
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {secondList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="b" href={item.link}>
+                      <Button type="primary" key={idx} size="large" component="b" href={item.link} >
                         {item.name}
                       </Button>
                     );
@@ -109,15 +100,6 @@ const WorkTable = (props) => {
           </Cell>
           <Cell colSpan={4}>
             <Card free>
-              {/* <Card.Header
-                title="快捷入口"
-                extra={
-                  <Button type="primary" size="large" text component="a" href="#/dashboard/function1">
-                    设置
-                  </Button>
-                }
-              /> */}
-
               <Card.Content>
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {thirdList.map((item, idx) => {
