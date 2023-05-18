@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, withRouter } from 'ice';
 import { Nav } from '@alifd/next';
 import { asideMenuConfig } from '../../menuConfig';
+import styles from './index.module.css';
 
 const { SubNav } = Nav;
 const NavItem = Nav.Item; // mock the auth object
@@ -52,7 +53,7 @@ function getSubMenuOrItem(item, index, auth) {
 
   const navItem = (
     <NavItem key={item.path} icon={item.icon}>
-      <Link to={item.path}>{item.name}</Link>
+      <Link to={item.path} >{item.name}</Link>
     </NavItem>
   );
   return navItem;

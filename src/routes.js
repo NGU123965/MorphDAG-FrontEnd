@@ -29,7 +29,7 @@ const routerConfig = [
       },
       {
         path: '/',
-        redirect: '/dashboard/analysis',
+        redirect: '/dashboard/mainpage',
       },
     ],
   },
