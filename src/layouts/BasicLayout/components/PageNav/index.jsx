@@ -53,7 +53,7 @@ function getSubMenuOrItem(item, index, auth) {
 
   const navItem = (
     <NavItem key={item.path} icon={item.icon}>
-      <Link to={item.path} style={{ fontSize: '16px' }}>{item.name}</Link>
+      <Link to={item.path} style={{ fontSize: '20px' }}>{item.name}</Link>
     </NavItem>
   );
   return navItem;
