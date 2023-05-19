@@ -173,6 +173,10 @@
 }
 
 .workTable .largeButton {
-  font-size: 20px;
-  padding: 2px 24px;
+  display: flex;
+  align-items: center; /* 在垂直方向上居中对齐 */
+  justify-content: center; /* 在水平方向上居中对齐 */
+  font-weight: bold;
+  font-size: 40px;
+  padding: 40px 40px;
 }

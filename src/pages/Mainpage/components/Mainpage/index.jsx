@@ -44,7 +44,7 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap >
                   {firstList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={`${styles.largeButton} ${styles.largeText}`}>
                         {item.name}
                       </Button>
                     );
@@ -60,7 +60,7 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {secondList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={`${styles.largeButton} ${styles.largeText}`}>
                         {item.name}
                       </Button>
                     );
@@ -76,7 +76,7 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {thirdList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={`${styles.largeButton} ${styles.largeText}`}>
                         {item.name}
                       </Button>
                     );
