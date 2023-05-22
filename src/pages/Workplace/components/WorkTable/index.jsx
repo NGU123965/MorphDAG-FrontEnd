@@ -110,7 +110,7 @@ const WorkTable = (props) => {
     <div>
       <Box spacing={20}>
         <Card free>
-          <Card.Header title={<span className={styles.cardTitle}>系统存储开销详情</span>} />
+          <Card.Header title={<span className={styles.cardTitle}>系统状态一致性详情</span>} />
           <Card.Divider />
           <Card.Content>
             <Box align="center">

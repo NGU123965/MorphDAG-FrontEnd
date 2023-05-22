@@ -85,7 +85,7 @@ const FunctionDetail2 = (props) => {
                 hasIcon={false}
                 searchText="查询交易"
                 onSearch={onSearchClick}
-                placeholder="请输入交易的哈希值"
+                placeholder="请输入轮次号"
                 size="large"
               />
             </Box>
