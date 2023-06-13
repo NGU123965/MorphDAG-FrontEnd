@@ -1,14 +1,14 @@
 export default {
   first: [{
-    name: '存储开销检测',
+    name: '存储开销评估',
     link: '#/dashboard/analysis',
   }],
   second: [{
-    name: '一致性检测',
+    name: '存储一致性评估',
     link: '#/dashboard/workplace',
   }],
   third: [{
-    name: '数据查询',
+    name: '查询性能评估',
     link: '#/dashboard/function1',
   }],
 };

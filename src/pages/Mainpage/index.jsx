@@ -20,7 +20,7 @@ const Mainpage = (props) => {
       <ResponsiveGrid gap={0} >
         <Cell colSpan={12}>
           <PageHeader
-            title={<div className="welcome-text">Welcome to MorphDAG</div>}
+            title={<div className="welcome-text">有原型系统中文的名称，几个关键词目标介绍MorphDAG</div>}
           />
         </Cell>
         {/* <Cell colSpan={4}>

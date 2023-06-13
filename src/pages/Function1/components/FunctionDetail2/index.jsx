@@ -76,7 +76,7 @@ const FunctionDetail2 = (props) => {
     <div>
       <Box spacing={20}>
         <Card free>
-          <Card.Header className={styles.cardHeader} title={<span className={styles.cardTitle}>轮次交易查询</span>} />
+          <Card.Header className={styles.cardHeader} title={<span className={styles.cardTitle}>区块查询</span>} />
           <Card.Divider />
           <Card.Content>
             <Box align="center">
