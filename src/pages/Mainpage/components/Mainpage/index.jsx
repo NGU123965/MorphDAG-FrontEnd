@@ -37,11 +37,11 @@ const WorkTable = (props) => {
     <div className={styles.workTable} >
       <div className={styles.workerContainer} />
       <div className={styles.workTableContent}>
-        <ResponsiveGrid gap={20}>
+        <ResponsiveGrid gap={0}>
           <Cell colSpan={12}>
             <Card free style={{ height: '100%', width: '100%' }}>
               <Card.Content className={styles.flexContainer}>
-                <div className={styles.imageContainer}>
+                <div className={styles.imageContainer} style={{ position: 'relative', left: '30%', transform: 'translateX(-50%)' }}>
                   <img src={pic} alt="总图标" className={styles.architectureImage} style={{ objectFit: 'cover', width: '50%', height: '50%' }} />
                 </div>
                 <div className={styles.descriptionContainer}>
@@ -64,7 +64,11 @@ const WorkTable = (props) => {
           </Cell>
 
           <Cell colSpan={12}>
-            <Card free style={{ height: '100%', width: '100%' }}>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
+              {/* <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f0f0f0' }}>
+              <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f5f5f5' }}>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f8f8f8' }}>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#d3d3d3' }}> */}
               <Card.Content className={`${styles.flexContainer} ${styles.contentContainer}`}>
                 <div className={styles.imageContainer}>
                   <img
@@ -113,10 +117,10 @@ const WorkTable = (props) => {
           </Cell>
 
           <Cell colSpan={12}>
-            <Card free style={{ height: '100%', width: '100%' }}>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f7f7f7' }}>
               <Card.Content className={styles.flexContainer}>
-                <div className={styles.imageContainer}>
-                  <img src={lj} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '120%', height: '120%' }} />
+                <div className={styles.imageContainer} style={{ position: 'relative', left: '30%', transform: 'translateX(-50%)' }}>
+                  <img src={lj} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                 </div>
                 <div className={styles.descriptionContainer}>
                   <p style={{ textAlign: 'center', fontSize: '40px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', marginTop: '-20px', marginLeft: '200px' }}>
@@ -137,23 +141,8 @@ const WorkTable = (props) => {
             </Card>
           </Cell>
 
-          <Cell colSpan={12}>
-            <Card
-              free
-              style={{
-                height: '100%',
-                width: '100%',
-              }}
-            >
-              <Card.Header title={<span className={styles.cardHeaderTitle}>系统架构图</span>} />
-              <Card.Divider />
-              <Card.Content>
-                <img src={lj} alt="架构图" className={styles.architectureImage} />
-              </Card.Content>
-            </Card>
-          </Cell>
         </ResponsiveGrid>
-        <ResponsiveGrid gap={2}>
+        <ResponsiveGrid gap={0}>
           <Cell colSpan={4}>
             <Card free>
               <Card.Content className={styles.centeredContent}>
@@ -202,21 +191,6 @@ const WorkTable = (props) => {
             </Card>
           </Cell>
 
-          <Cell colSpan={12}>
-            <Card
-              free
-              style={{
-                height: '100%',
-                width: '100%',
-              }}
-            >
-              <Card.Header title={<span className={styles.cardHeaderTitle}>系统架构图</span>} />
-              <Card.Divider />
-              <Card.Content>
-                <img src={lj} alt="架构图" className={styles.architectureImage} />
-              </Card.Content>
-            </Card>
-          </Cell>
           <Cell colSpan={12}>
             <Card
               free
