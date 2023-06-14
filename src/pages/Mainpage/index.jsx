@@ -42,7 +42,7 @@ const Mainpage = (props) => {
           </Card>
         </Cell>
       </ResponsiveGrid> */}
-      <Cell gap={1} colSpan={12}>
+      <Cell colSpan={12}>
         <WorkTable />
       </Cell>
     </div>

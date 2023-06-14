@@ -82,7 +82,7 @@ const Navigation = (props, context) => {
   return (
     <Nav
       type="normal"
-      direction="ver"
+      direction="hoz"
       openKeys={openKeys}
       selectedKeys={[pathname]}
       defaultSelectedKeys={[pathname]}

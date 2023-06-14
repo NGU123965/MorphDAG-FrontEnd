@@ -62,22 +62,13 @@ export default function BasicLayout({ children }) {
         fixedHeader={false}
         device="desktop"
       >
-        <Shell.Navigation
-          direction="hoz"
-          style={{
-            marginRight: '0%',
-            // margin: '45%',
-            // width: 'calc(100% - 207px)',
-          }}
-        >
+        <Shell.Navigation direction="hoz">
           <PageNav />
+          <div style={{ marginLeft: '1000px' }} /> {/* 添加一个空的 div 用于调整间距 */}
           <Logo image="./logo.png" />
         </Shell.Navigation>
 
-        {/* <Shell.Action>
-          <HeaderAvatar />
-        </Shell.Action> */}
-        <Shell.Content>{children}</Shell.Content>
+        <Shell.Content style={{ padding: 0, margin: 0 }}>{children}</Shell.Content>
         <Shell.Footer>
           <Footer />
         </Shell.Footer>
