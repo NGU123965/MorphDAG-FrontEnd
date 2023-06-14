@@ -70,15 +70,13 @@ export default function BasicLayout({ children }) {
             // width: 'calc(100% - 207px)',
           }}
         >
+          <PageNav />
           <Logo image="./logo.png" />
         </Shell.Navigation>
 
         {/* <Shell.Action>
           <HeaderAvatar />
         </Shell.Action> */}
-        <Shell.Navigation>
-          <PageNav />
-        </Shell.Navigation>
         <Shell.Content>{children}</Shell.Content>
         <Shell.Footer>
           <Footer />
