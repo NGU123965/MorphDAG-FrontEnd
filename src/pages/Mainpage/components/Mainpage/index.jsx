@@ -60,28 +60,28 @@ const WorkTable = (props) => {
                   </p>
                 </div>
               </Card.Content>
+              <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
             </Card>
           </Cell>
 
           <Cell colSpan={12}>
             <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
-              {/* <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f0f0f0' }}>
-              <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f5f5f5' }}>
-            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f8f8f8' }}>
-            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#d3d3d3' }}> */}
+              <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
               <Card.Content className={`${styles.flexContainer} ${styles.contentContainer}`}>
                 <div className={styles.imageContainer}>
                   <img
                     src={pic1}
                     alt="完成"
                     className={styles.architectureImage}
-                    style={{ objectFit: 'cover', width: '25%', height: '25%', margin: '0 -250px 0 0' }}
+                    style={{ objectFit: 'cover', width: '30%', height: '30%', margin: '0 0 0 0' }}
                   />
                 </div>
                 <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'center', fontSize: '20px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -100px' }}>
-                    高并发 <br />
-                    可扩展存储
+                  <p style={{ textAlign: 'left', fontSize: '35px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
+                    -5x
+                  </p>
+                  <p style={{ textAlign: 'left', fontSize: '25px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
+                    高并发可扩展存储
                   </p>
                 </div>
                 <div className={styles.imageContainer}>
@@ -89,13 +89,15 @@ const WorkTable = (props) => {
                     src={pic1}
                     alt="完成"
                     className={styles.architectureImage}
-                    style={{ objectFit: 'cover', width: '25%', height: '25%', margin: '0 -250px 0 0' }}
+                    style={{ objectFit: 'cover', width: '30%', height: '30%', margin: '0 0 0 0' }}
                   />
                 </div>
                 <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'center', fontSize: '20px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -100px' }}>
-                    高效一致性 <br />
-                    共识执行
+                  <p style={{ textAlign: 'left', fontSize: '35px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
+                    10TB+
+                  </p>
+                  <p style={{ textAlign: 'left', fontSize: '25px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
+                    高效一致性共识执行
                   </p>
                 </div>
                 <div className={styles.imageContainer}>
@@ -103,21 +105,25 @@ const WorkTable = (props) => {
                     src={pic1}
                     alt="完成"
                     className={styles.architectureImage}
-                    style={{ objectFit: 'cover', width: '25%', height: '25%', margin: '0 -250px 0 0' }}
+                    style={{ objectFit: 'cover', width: '30%', height: '30%', margin: '0 0 0 0' }}
                   />
                 </div>
                 <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'center', fontSize: '20px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -100px' }}>
-                    高效可验证 <br />
-                    查询检索
+                  <p style={{ textAlign: 'left', fontSize: '35px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
+                    &lt;20s
+                  </p>
+                  <p style={{ textAlign: 'left', fontSize: '25px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
+                    高效可验证查询检索
                   </p>
                 </div>
               </Card.Content>
+              <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
             </Card>
           </Cell>
 
           <Cell colSpan={12}>
-            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f7f7f7' }}>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#ffffff' }}>
+              <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
               <Card.Content className={styles.flexContainer}>
                 <div className={styles.imageContainer} style={{ position: 'relative', left: '30%', transform: 'translateX(-50%)' }}>
                   <img src={lj} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
@@ -138,13 +144,16 @@ const WorkTable = (props) => {
                   </p>
                 </div>
               </Card.Content>
+              <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
+              <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
             </Card>
           </Cell>
 
         </ResponsiveGrid>
+
         <ResponsiveGrid gap={0}>
           <Cell colSpan={4}>
-            <Card free>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }} >
               <Card.Content className={styles.centeredContent}>
                 <Box spacing={[20, 50]} direction="row" wrap >
                   {firstList.map((item, idx) => {
@@ -160,7 +169,7 @@ const WorkTable = (props) => {
           </Cell>
 
           <Cell colSpan={4}>
-            <Card free>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }} >
               <Card.Content className={styles.centeredContent}>
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {secondList.map((item, idx) => {
@@ -176,7 +185,7 @@ const WorkTable = (props) => {
           </Cell>
 
           <Cell colSpan={4}>
-            <Card free>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }} >
               <Card.Content className={styles.centeredContent}>
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {thirdList.map((item, idx) => {
