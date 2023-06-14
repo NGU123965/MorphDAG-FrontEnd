@@ -4,7 +4,7 @@
   margin-bottom: 0;
   margin-left: calc(0px - var(--shell-dark-content-paddingLeft, 20px));
   padding: var(--shell-dark-content-paddingTop, 20px) var(--shell-dark-content-paddingLeft, 20px);
-  background-color: var(--color-white, #fff);
+  background-color: var(--color-white, #e22323);
 }
 
 .title {
@@ -19,7 +19,7 @@
 
 .description {
   display: block;
-  color: var(--color-text1-3, #666);
+  color: var(--color-text1-3, #efe9e9);
   font-size: var(--font-size-body-2, 14px);
   line-height: 1.5;
 }

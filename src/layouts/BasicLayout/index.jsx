@@ -58,7 +58,7 @@ export default function BasicLayout({ children }) {
         style={{
           minHeight: '100vh',
         }}
-        type="brand"
+        type="dark"
         fixedHeader={false}
         device="desktop"
       >
@@ -66,18 +66,12 @@ export default function BasicLayout({ children }) {
           direction="hoz"
           style={{
             marginRight: '0%',
-            // margin: '45%',
-            // width: 'calc(100% - 207px)',
           }}
         >
           <PageNav />
           <Logo image="./logo.png" />
         </Shell.Navigation>
-
-        {/* <Shell.Action>
-          <HeaderAvatar />
-        </Shell.Action> */}
-        <Shell.Content>{children}</Shell.Content>
+        <Shell.Content style={{ padding: 0, margin: 0 }}>{children}</Shell.Content>
         <Shell.Footer>
           <Footer />
         </Shell.Footer>
