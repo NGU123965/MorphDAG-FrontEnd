@@ -201,7 +201,7 @@ const WorkTable = (props) => {
             </Card>
           </Cell>
 
-          <Cell colSpan={12}>
+          {/* <Cell colSpan={12}>
             <Card
               free
               style={{
@@ -273,7 +273,7 @@ const WorkTable = (props) => {
                 <img src={fig5} alt="子图匹配查询验证耗时对比图" className={styles.architectureImage} />
               </Card.Content>
             </Card>
-          </Cell>
+          </Cell> */}
         </ResponsiveGrid>
       </div>
     </div>
