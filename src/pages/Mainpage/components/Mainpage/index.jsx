@@ -224,6 +224,7 @@ const WorkTable = (props) => {
                 height: '100%',
                 width: '100%',
               }}
+              className={styles.Card}
             >
               <Card.Header title={<span className={styles.cardHeaderTitle}>度量</span>} />
               <Card.Divider />

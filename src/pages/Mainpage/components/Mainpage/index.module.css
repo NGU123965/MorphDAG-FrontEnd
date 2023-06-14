@@ -194,3 +194,7 @@
 .descriptionContainer {
   flex: 1;
 }
+
+.Card {
+  background-color: #f0ecec;
+}
