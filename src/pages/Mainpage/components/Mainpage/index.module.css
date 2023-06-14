@@ -188,10 +188,17 @@
   align-items: center; /* 在垂直方向上居中对齐 */
   justify-content: center; /* 在水平方向上居中对齐 */
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
   padding: 40px 40px;
-  background-color:#ffffff;
+  background-color:#f2f2f2;
   color: #ca1f1f;
+  border: #f2f2f2;
+}
+
+.workTable .smalltitle {
+  color: #4e85fc;
+  font-weight: bold;
+  font-size: 35px;
 }
 
 .workTable .largeButton:hover {

@@ -152,26 +152,18 @@ const WorkTable = (props) => {
         </ResponsiveGrid>
 
         <ResponsiveGrid gap={0}>
-          <Cell colSpan={4}>
+          <Cell colSpan={12}>
             <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }} >
+              <Card.Content><span className={styles.smalltitle}>功能</span></Card.Content>
               <Card.Content className={styles.centeredContent}>
-                <Box spacing={[20, 50]} direction="row" wrap >
+                <Box spacing={0} direction="row" wrap justify="center">
                   {firstList.map((item, idx) => {
                     return (
                       <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
-                        {item.name}
+                        <span>存储开销评估</span>
                       </Button>
                     );
                   })}
-                </Box>
-              </Card.Content>
-            </Card>
-          </Cell>
-
-          <Cell colSpan={4}>
-            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }} >
-              <Card.Content className={styles.centeredContent}>
-                <Box spacing={[20, 50]} direction="row" wrap>
                   {secondList.map((item, idx) => {
                     return (
                       <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
@@ -179,15 +171,6 @@ const WorkTable = (props) => {
                       </Button>
                     );
                   })}
-                </Box>
-              </Card.Content>
-            </Card>
-          </Cell>
-
-          <Cell colSpan={4}>
-            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }} >
-              <Card.Content className={styles.centeredContent}>
-                <Box spacing={[20, 50]} direction="row" wrap>
                   {thirdList.map((item, idx) => {
                     return (
                       <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
@@ -200,7 +183,7 @@ const WorkTable = (props) => {
             </Card>
           </Cell>
 
-          <Cell colSpan={12}>
+          {/* <Cell colSpan={12}>
             <Card
               free
               style={{
@@ -209,8 +192,6 @@ const WorkTable = (props) => {
               }}
               className={styles.Card}
             >
-              {/* <Card.Header title={<span className={styles.cardHeaderTitle1}>度量</span>} /> */}
-              {/* <Card.Divider /> */}
               <Card.Content><span className={styles.cardHeaderTitle1}>节点存储开销与执行吞吐量</span></Card.Content>
               <Card.Content>
                 <img src={fig1} alt="度量指标图" className={styles.architectureImage} />
@@ -274,7 +255,7 @@ const WorkTable = (props) => {
                 <img src={fig5} alt="子图匹配查询验证耗时对比图" className={styles.architectureImage} />
               </Card.Content>
             </Card>
-          </Cell>
+          </Cell> */}
         </ResponsiveGrid>
       </div>
     </div>
