@@ -83,7 +83,7 @@ const FunctionDetail1 = (props) => {
     <div>
       <Box spacing={20}>
         <Card free>
-          <Card.Header className={styles.cardHeader} title={<span className={styles.cardTitle}>单笔交易查询</span>} />
+          <Card.Header className={styles.cardHeader} title={<span className={styles.cardTitle}>交易查询</span>} />
           <Card.Divider />
           <Card.Content>
             <Box align="center">

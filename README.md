@@ -30,6 +30,7 @@ $ npm run start  # visit http://localhost:3333
 │   ├── pages/                     # 页面组件
 │   │   └── Analysis/              # 存储开销检测
 │   │   └── Function1/             # 一致性检测
+│   │   └── Mainpage/              # 主界面
 │   │   └── Workplace/             # 查询
 │   ├── utils/                     # 具库
 │   ├── global.scss                # 全局样式
