@@ -112,13 +112,24 @@
   justify-content: center;
 }
 
-.workTable .cardHeaderTitle {
+.workTable .cardHeaderTitle1 {
   font-size: 40px;
   font-weight: bold;
   color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f0ecec;
+}
+
+.workTable .cardHeaderTitle2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
 }
 
 .titleName {
