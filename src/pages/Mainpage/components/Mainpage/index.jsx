@@ -5,13 +5,18 @@ import {
   Button,
   ResponsiveGrid,
   Card,
-  Icon
+  Icon,
 } from '@alifd/next';
 import mock from './mock';
 import styles from './index.module.css';
 import pic from './logo.png';
 import pic1 from './icon.png';
-import pic2 from './架构图.jpg';
+import lj from './架构图.jpg';
+import fig1 from './指标一.jpg';
+import fig2 from './吞吐量指标.jpg';
+import fig3 from './时延指标.jpg';
+import fig4 from './范围溯源查询耗时对比.jpg';
+import fig5 from './子图匹配查询验证耗时对比.jpg';
 import background from './universe.jpg';
 
 const { useState } = React;
@@ -111,7 +116,7 @@ const WorkTable = (props) => {
             <Card free style={{ height: '100%', width: '100%' }}>
               <Card.Content className={styles.flexContainer}>
                 <div className={styles.imageContainer}>
-                  <img src={pic2} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '120%', height: '120%' }} />
+                  <img src={lj} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '120%', height: '120%' }} />
                 </div>
                 <div className={styles.descriptionContainer}>
                   <p style={{ textAlign: 'center', fontSize: '40px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', marginTop: '-20px', marginLeft: '200px' }}>
@@ -143,11 +148,12 @@ const WorkTable = (props) => {
               <Card.Header title={<span className={styles.cardHeaderTitle}>系统架构图</span>} />
               <Card.Divider />
               <Card.Content>
-                <img src={pic2} alt="架构图" className={styles.architectureImage} />
+                <img src={lj} alt="架构图" className={styles.architectureImage} />
               </Card.Content>
             </Card>
           </Cell>
-
+        </ResponsiveGrid>
+        <ResponsiveGrid gap={2}>
           <Cell colSpan={4}>
             <Card free>
               <Card.Content className={styles.centeredContent}>
@@ -196,6 +202,96 @@ const WorkTable = (props) => {
             </Card>
           </Cell>
 
+          <Cell colSpan={12}>
+            <Card
+              free
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+            >
+              <Card.Header title={<span className={styles.cardHeaderTitle}>系统架构图</span>} />
+              <Card.Divider />
+              <Card.Content>
+                <img src={lj} alt="架构图" className={styles.architectureImage} />
+              </Card.Content>
+            </Card>
+          </Cell>
+          <Cell colSpan={12}>
+            <Card
+              free
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+            >
+              <Card.Header title={<span className={styles.cardHeaderTitle}>度量</span>} />
+              <Card.Divider />
+              <Card.Content>
+                <img src={fig1} alt="度量指标图" className={styles.architectureImage} />
+              </Card.Content>
+            </Card>
+          </Cell>
+          <Cell colSpan={6}>
+            <Card
+              free
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+            >
+              <Card.Header title={<span className={styles.cardHeaderTitle}>吞吐量</span>} />
+              <Card.Divider />
+              <Card.Content>
+                <img src={fig2} alt="吞吐量指标图" className={styles.architectureImage} />
+              </Card.Content>
+            </Card>
+          </Cell>
+          <Cell colSpan={6}>
+            <Card
+              free
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+            >
+              <Card.Header title={<span className={styles.cardHeaderTitle}>时延</span>} />
+              <Card.Divider />
+              <Card.Content>
+                <img src={fig3} alt="时延指标图" className={styles.architectureImage} />
+              </Card.Content>
+            </Card>
+          </Cell>
+          <Cell colSpan={7}>
+            <Card
+              free
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+            >
+              <Card.Header title={<span className={styles.cardHeaderTitle}>范围溯源查询耗时对比</span>} />
+              <Card.Divider />
+              <Card.Content>
+                <img src={fig4} alt="范围溯源查询耗时对比图" className={styles.architectureImage} />
+              </Card.Content>
+            </Card>
+          </Cell>
+          <Cell colSpan={5}>
+            <Card
+              free
+              style={{
+                height: '100%',
+                width: '100%',
+              }}
+            >
+              <Card.Header title={<span className={styles.cardHeaderTitle}>子图匹配查询验证耗时对比</span>} />
+              <Card.Divider />
+              <Card.Content>
+                <img src={fig5} alt="子图匹配查询验证耗时对比图" className={styles.architectureImage} />
+              </Card.Content>
+            </Card>
+          </Cell>
         </ResponsiveGrid>
       </div>
     </div>

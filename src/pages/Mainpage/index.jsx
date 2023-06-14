@@ -17,7 +17,7 @@ const Mainpage = (props) => {
 
   return (
     <div className="container" style={{ background: 'white' }}>
-      <ResponsiveGrid gap={0} >
+      {/* <ResponsiveGrid gap={0} >
         <Cell colSpan={12}>
           <PageHeader
             title={<div className="welcome-text">有原型系统中文的名称，几个关键词目标介绍MorphDAG</div>}
@@ -26,8 +26,25 @@ const Mainpage = (props) => {
 
         <Cell colSpan={12}>
           <WorkTable />
+        <Cell colSpan={4}>
+          <Card free>
+            <Card.Content>
+              <Box spacing={[20, 50]} direction="row" wrap>
+                {entranceList.map((item, idx) => {
+                  return (
+                    <Button key={idx} size="large" text component="a" href={item.link}>
+                      {item.name}
+                    </Button>
+                  );
+                })}
+              </Box>
+            </Card.Content>
+          </Card>
         </Cell>
-      </ResponsiveGrid>
+      </ResponsiveGrid> */}
+      <Cell gap={1} colSpan={12}>
+        <WorkTable />
+      </Cell>
     </div>
   );
 };
