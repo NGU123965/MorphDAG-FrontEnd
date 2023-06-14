@@ -152,6 +152,11 @@
 .cardTitle {
   font-weight: bold;
   font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  color: #000000;
 }
 
 .tableTitle {
@@ -164,4 +169,30 @@
 
 .emptyText {
   font-size: x-large;
+}
+
+.architectureImage {
+  width: 80%;  
+  height: auto;
+  display: inline-block; 
+}
+
+.workTable {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  line-height: 0.5;
+  font-weight: bold;
+  color: #000000;
+}
+
+.CardContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

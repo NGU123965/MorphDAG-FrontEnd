@@ -7,9 +7,11 @@ import {
   Table,
   Pagination,
   Select,
+  ResponsiveGrid,
   Tag,
 } from '@alifd/next';
 import styles from './index.module.css';
+import fig1 from './任务二.jpg';
 
 const WorkTable = (props) => {
   const [tableData, setTableData] = useState([]);
@@ -21,15 +23,15 @@ const WorkTable = (props) => {
   const [searchData, setSearchData] = useState([]);
   // eslint-disable-next-line max-len
   const paths = ['./Records-200/info-0.json', './Records-200/info-1.json', './Records-200/info-2.json', './Records-200/info-3.json', './Records-200/info-4.json', './Records-200/info-5.json', './Records-200/info-6.json', './Records-200/info-7.json'];
-
+  const { Cell } = ResponsiveGrid;
   useEffect(() => {
     async function fetchData() {
       const data = [];
       for (const path of paths) {
         const response = await fetch(path);
         const json = await response.json();
-        const records = json.records;
-        const jsonData = Object.keys(records).map(key => ({
+        const { records } = json;
+        const jsonData = Object.keys(records).map((key) => ({
           shardID: records[key].shardid,
           round: records[key].round,
           leader_hash: records[key].leader_hash,
@@ -108,9 +110,31 @@ const WorkTable = (props) => {
 
   return (
     <div>
-      <Box spacing={20}>
-        <Card free>
-          <Card.Header title={<span className={styles.cardTitle}>系统状态一致性详情</span>} />
+      <Box spacing={0}>
+        <Cell colSpan={12}>
+          <Card
+            free
+            className={styles.CardContent}
+          >
+            <Card.Content>
+              <span className={styles.title} >任务二架构图</span>
+            </Card.Content>
+          </Card>
+        </Cell>
+        <Cell colSpan={12}>
+          <Card
+            free
+            className={styles.CardContent}
+          >
+            <Card.Content className={styles.CardContent}>
+              <img src={fig1} alt="度量指标图" className={styles.architectureImage} />
+            </Card.Content>
+          </Card>
+        </Cell>
+        <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
+          <Card.Content>
+            <span className={styles.cardTitle} >系统状态一致性详情</span>
+          </Card.Content>
           <Card.Divider />
           <Card.Content>
             <Box align="center">

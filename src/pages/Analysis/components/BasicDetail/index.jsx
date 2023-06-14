@@ -6,10 +6,13 @@ import {
   Card,
   Table,
   Pagination,
-  Select,
   Tag,
+  ResponsiveGrid,
 } from '@alifd/next';
 import styles from './index.module.css';
+import fig1 from './任务一.jpg';
+
+const { Cell } = ResponsiveGrid;
 
 const BasicDetail = (props) => {
   const [tableData, setTableData] = useState([]);
@@ -28,12 +31,12 @@ const BasicDetail = (props) => {
       for (const path of paths) {
         const response = await fetch(path);
         const json = await response.json();
-        const records = json.records;
-        const jsonData = Object.keys(records).map(key => ({
+        const { records } = json;
+        const jsonData = Object.keys(records).map((key) => ({
           shardID: records[key].shardid,
           round: records[key].round,
-          chaindataMB: records[key].chaindata_MB + ' MB',
-          statedataMB: records[key].statedata_MB + ' MB',
+          chaindataMB: `${records[key].chaindata_MB} MB`,
+          statedataMB: `${records[key].statedata_MB} MB`,
         }));
         data.push(...jsonData);
       }
@@ -132,9 +135,30 @@ const BasicDetail = (props) => {
 
   return (
     <div>
-      <Box spacing={20}>
-        <Card free>
-          <Card.Header title={<span className={styles.cardTitle}>系统存储开销详情</span>} />
+
+      <Box spacing={0}>
+        <Cell colSpan={12}>
+          <Card
+            free
+            className={styles.CardContent}
+          >
+            <Card.Content>
+              <span className={styles.title} >任务一架构图</span>
+            </Card.Content>
+          </Card>
+        </Cell>
+        <Cell colSpan={12}>
+          <Card
+            free
+            className={styles.CardContent}
+          >
+            <Card.Content className={styles.CardContent}>
+              <img src={fig1} alt="度量指标图" className={styles.architectureImage} />
+            </Card.Content>
+          </Card>
+        </Cell>
+        <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
+          <Card.Content ><span className={styles.cardTitle}>存储开销查询</span></Card.Content>
           <Card.Divider />
           <Card.Content>
             <Box align="center">
