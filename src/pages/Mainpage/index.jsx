@@ -17,13 +17,13 @@ const Mainpage = (props) => {
 
   return (
     <div className="container">
-      <ResponsiveGrid gap={0} >
+      {/* <ResponsiveGrid gap={0} >
         <Cell colSpan={12}>
           <PageHeader
             title={<div className="welcome-text">Welcome to MorphDAG</div>}
           />
         </Cell>
-        {/* <Cell colSpan={4}>
+        <Cell colSpan={4}>
           <Card free>
             <Card.Content>
               <Box spacing={[20, 50]} direction="row" wrap>
@@ -37,11 +37,11 @@ const Mainpage = (props) => {
               </Box>
             </Card.Content>
           </Card>
-        </Cell> */}
-        <Cell colSpan={12}>
-          <WorkTable />
         </Cell>
-      </ResponsiveGrid>
+      </ResponsiveGrid> */}
+      <Cell gap={1} colSpan={12}>
+        <WorkTable />
+      </Cell>
     </div>
   );
 };
