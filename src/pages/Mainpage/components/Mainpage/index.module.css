@@ -119,7 +119,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0ecec;
+  background-color: #f2f2f2;
 }
 
 .workTable .cardHeaderTitle2 {
@@ -190,6 +190,12 @@
   font-weight: bold;
   font-size: 40px;
   padding: 40px 40px;
+  background-color:#ffffff;
+  color: #ca1f1f;
+}
+
+.workTable .largeButton:hover {
+  background-color: #0d94bd;
 }
 
 .flexContainer {
@@ -207,5 +213,5 @@
 }
 
 .Card {
-  background-color: #f0ecec;
+  background-color: #f2f2f2;
 }

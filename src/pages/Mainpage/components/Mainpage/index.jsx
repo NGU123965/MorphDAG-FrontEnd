@@ -158,7 +158,7 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap >
                   {firstList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                      <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
                         {item.name}
                       </Button>
                     );
@@ -174,7 +174,7 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {secondList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                      <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
                         {item.name}
                       </Button>
                     );
@@ -190,7 +190,7 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {thirdList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                      <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
                         {item.name}
                       </Button>
                     );
@@ -211,7 +211,7 @@ const WorkTable = (props) => {
             >
               {/* <Card.Header title={<span className={styles.cardHeaderTitle1}>度量</span>} /> */}
               {/* <Card.Divider /> */}
-              <Card.Content><span className={styles.cardHeaderTitle1}>度量</span></Card.Content>
+              <Card.Content><span className={styles.cardHeaderTitle1}>节点存储开销与执行吞吐量</span></Card.Content>
               <Card.Content>
                 <img src={fig1} alt="度量指标图" className={styles.architectureImage} />
               </Card.Content>
