@@ -117,7 +117,7 @@ const WorkTable = (props) => {
           </Cell>
 
           <Cell colSpan={12}>
-            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f7f7f7' }}>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#ffffff' }}>
               <Card.Content className={styles.flexContainer}>
                 <div className={styles.imageContainer} style={{ position: 'relative', left: '30%', transform: 'translateX(-50%)' }}>
                   <img src={lj} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
@@ -149,7 +149,7 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap >
                   {firstList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                      <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
                         {item.name}
                       </Button>
                     );
@@ -165,7 +165,7 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {secondList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                      <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
                         {item.name}
                       </Button>
                     );
@@ -181,7 +181,7 @@ const WorkTable = (props) => {
                 <Box spacing={[20, 50]} direction="row" wrap>
                   {thirdList.map((item, idx) => {
                     return (
-                      <Button type="primary" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                      <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
                         {item.name}
                       </Button>
                     );
@@ -202,7 +202,7 @@ const WorkTable = (props) => {
             >
               {/* <Card.Header title={<span className={styles.cardHeaderTitle1}>度量</span>} /> */}
               {/* <Card.Divider /> */}
-              <Card.Content><span className={styles.cardHeaderTitle1}>度量</span></Card.Content>
+              <Card.Content><span className={styles.cardHeaderTitle1}>节点存储开销与执行吞吐量</span></Card.Content>
               <Card.Content>
                 <img src={fig1} alt="度量指标图" className={styles.architectureImage} />
               </Card.Content>

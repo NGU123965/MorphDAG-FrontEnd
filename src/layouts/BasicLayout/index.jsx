@@ -69,8 +69,6 @@ export default function BasicLayout({ children }) {
           }}
         >
           <PageNav />
-          <PageNav style={{ }} />
-          <div style={{ marginLeft: '1000px' }} /> {/* 添加一个空的 div 用于调整间距 */}
           <Logo image="./logo.png" />
         </Shell.Navigation>
 
