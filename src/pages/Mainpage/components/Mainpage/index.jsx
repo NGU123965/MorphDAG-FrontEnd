@@ -133,6 +133,8 @@ const WorkTable = (props) => {
                     系统架构图
                   </p>
 
+                  <p> </p>
+
                   <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginTop: '20px', marginLeft: '200px' }}>
                     &emsp;&emsp;原型系统MorphDAG1.0的版本分为四层，由下至上依次是：数据层、共识层、执行层和查询层。
                   </p>
@@ -145,7 +147,7 @@ const WorkTable = (props) => {
                 </div>
               </Card.Content>
               <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
-              <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
+              <div colSpan={12} style={{ background: '#f2f2f2', height: '35px' }} />
             </Card>
           </Cell>
 
@@ -154,32 +156,48 @@ const WorkTable = (props) => {
         <ResponsiveGrid gap={0}>
           <Cell colSpan={12}>
             <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }} >
-              <Card.Content><span className={styles.smalltitle}>功能</span></Card.Content>
+              <Card.Content>
+                <span className={styles.smalltitle}>
+                  功能<br />
+                  ______
+                </span>
+              </Card.Content>
               <Card.Content className={styles.centeredContent}>
                 <Box spacing={0} direction="row" wrap justify="center">
                   {firstList.map((item, idx) => {
                     return (
-                      <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
-                        <span>存储开销评估</span>
+                      <Button type="normal" color="#ffffff" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <Icon type="copy" size={'xxxl'} style={{ marginBottom: '30px' }} />
+                          <span>{item.name}</span>
+                        </div>
                       </Button>
                     );
                   })}
                   {secondList.map((item, idx) => {
                     return (
                       <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
-                        {item.name}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <Icon type="chart-bar" size={'xxxl'} style={{ marginBottom: '30px' }} />
+                          <span>{item.name}</span>
+                        </div>
                       </Button>
                     );
                   })}
                   {thirdList.map((item, idx) => {
                     return (
                       <Button type="normal" key={idx} size="large" component="a" href={item.link} className={styles.largeButton}>
-                        {item.name}
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <Icon type="calendar" size={'xxxl'} style={{ marginBottom: '30px' }} />
+                          <span>{item.name}</span>
+                        </div>
                       </Button>
                     );
                   })}
                 </Box>
+
               </Card.Content>
+              <div colSpan={12} style={{ background: '#f2f2f2', height: '50px' }} />
             </Card>
           </Cell>
 
