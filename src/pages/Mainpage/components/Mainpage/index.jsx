@@ -200,8 +200,9 @@ const WorkTable = (props) => {
               }}
               className={styles.Card}
             >
-              <Card.Header title={<span className={styles.cardHeaderTitle}>度量</span>} />
-              <Card.Divider />
+              {/* <Card.Header title={<span className={styles.cardHeaderTitle1}>度量</span>} /> */}
+              {/* <Card.Divider /> */}
+              <Card.Content><span className={styles.cardHeaderTitle1}>度量</span></Card.Content>
               <Card.Content>
                 <img src={fig1} alt="度量指标图" className={styles.architectureImage} />
               </Card.Content>
@@ -215,8 +216,7 @@ const WorkTable = (props) => {
                 width: '100%',
               }}
             >
-              <Card.Header title={<span className={styles.cardHeaderTitle}>吞吐量</span>} />
-              <Card.Divider />
+              <Card.Header title={<span className={styles.cardHeaderTitle2}>吞吐量</span>} />
               <Card.Content>
                 <img src={fig2} alt="吞吐量指标图" className={styles.architectureImage} />
               </Card.Content>
@@ -230,8 +230,7 @@ const WorkTable = (props) => {
                 width: '100%',
               }}
             >
-              <Card.Header title={<span className={styles.cardHeaderTitle}>时延</span>} />
-              <Card.Divider />
+              <Card.Header title={<span className={styles.cardHeaderTitle2}>时延</span>} />
               <Card.Content>
                 <img src={fig3} alt="时延指标图" className={styles.architectureImage} />
               </Card.Content>
@@ -244,9 +243,9 @@ const WorkTable = (props) => {
                 height: '100%',
                 width: '100%',
               }}
+              className={styles.Card}
             >
-              <Card.Header title={<span className={styles.cardHeaderTitle}>范围溯源查询耗时对比</span>} />
-              <Card.Divider />
+              <Card.Content><span className={styles.cardHeaderTitle1}>范围溯源查询耗时对比</span></Card.Content>
               <Card.Content>
                 <img src={fig4} alt="范围溯源查询耗时对比图" className={styles.architectureImage} />
               </Card.Content>
@@ -259,9 +258,9 @@ const WorkTable = (props) => {
                 height: '100%',
                 width: '100%',
               }}
+              className={styles.Card}
             >
-              <Card.Header title={<span className={styles.cardHeaderTitle}>子图匹配查询验证耗时对比</span>} />
-              <Card.Divider />
+              <Card.Content><span className={styles.cardHeaderTitle1}>子图匹配查询验证耗时对比</span></Card.Content>
               <Card.Content>
                 <img src={fig5} alt="子图匹配查询验证耗时对比图" className={styles.architectureImage} />
               </Card.Content>
