@@ -73,7 +73,7 @@ export default function BasicLayout({ children }) {
         </Shell.Navigation>
 
         <Shell.Content style={{ padding: 0, margin: 0 }}>{children}</Shell.Content>
-        <Shell.Footer style={{ background: '#f2f2f2' }}>
+        <Shell.Footer style={{ background: '#171b1e' }}>
           <Footer />
         </Shell.Footer>
 

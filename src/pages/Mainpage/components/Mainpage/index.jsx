@@ -78,7 +78,7 @@ const WorkTable = (props) => {
                 </div>
                 <div className={styles.descriptionContainer}>
                   <p style={{ textAlign: 'left', fontSize: '35px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
-                    -5x
+                    &gt;5x
                   </p>
                   <p style={{ textAlign: 'left', fontSize: '25px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
                     高并发可扩展存储
