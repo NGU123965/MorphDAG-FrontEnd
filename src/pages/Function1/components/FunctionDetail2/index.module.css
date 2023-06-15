@@ -49,6 +49,11 @@ div[style="display:flex;justify-content:space-between;"] .next-table {
 .cardTitle {
   font-weight: bold;
   font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  color: #000000;
 }
 
 .cardHeader {

@@ -8,3 +8,29 @@
   overflow-y: visible; /* 溢出部分隐藏 */
   text-overflow: ellipsis; /* 溢出文本显示省略号 */
 }
+
+.architectureImage {
+  width: 80%;  
+  height: auto;
+  display: inline-block; 
+}
+
+.workTable {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  line-height: 0.5;
+  font-weight: bold;
+  color: #000000;
+}
+
+.CardContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

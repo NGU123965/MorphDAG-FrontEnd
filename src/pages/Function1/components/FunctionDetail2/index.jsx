@@ -75,9 +75,10 @@ const FunctionDetail2 = (props) => {
   return (
     <div>
       <Box spacing={20}>
-        <Card free>
-          <Card.Header className={styles.cardHeader} title={<span className={styles.cardTitle}>区块查询</span>} />
-          <Card.Divider />
+        <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
+          <Card.Content>
+            <span className={styles.cardTitle}>区块查询</span>
+          </Card.Content>
           <Card.Content>
             <Box align="center">
               <Search
