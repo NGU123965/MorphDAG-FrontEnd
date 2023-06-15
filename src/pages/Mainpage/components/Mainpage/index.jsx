@@ -124,21 +124,21 @@ const WorkTable = (props) => {
               <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
               <Card.Content className={styles.flexContainer}>
                 <div className={styles.imageContainer} style={{ position: 'relative', left: '30%', transform: 'translateX(-50%)' }}>
-                  <img src={lj} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+                  <img src={lj} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '110%', height: '110%' }} />
                 </div>
                 <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'left', fontSize: '40px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', marginTop: '-20px', marginLeft: '200px' }}>
+                  <p style={{ textAlign: 'left', fontSize: '40px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', marginTop: '-20px', marginLeft: '250px' }}>
                     系统架构图
                   </p>
 
-                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginTop: '20px', marginLeft: '200px' }}>
-                    原型系统MorphDAG1.0的版本分为四层，由下至上依次是：数据层、共识层、执行层和查询层。
+                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginTop: '20px', marginLeft: '250px' }}>
+                    原型系统MorphDAG1.0的版本分为三层，由下至上依次是：数据存储层、共识执行层和查询检索层。
                   </p>
 
-                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginLeft: '200px' }}>
-                    数据层面向任务一，构建了弹性图式数据模型与拓扑结构，并融合了分片存储策略提升存储可扩展性；
-                    共识层面向任务二，利用RBC或CBC进行区块广播，并采用引用计数机制，实现低延迟的图式共识；执行层面向任务二，包含区块全序确定机制以及负载感知的事务处理机制；
-                    查询层则面向任务三，实现可验证高效查询，支持时态数据查询以及图结构数据查询。
+                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginLeft: '250px' }}>
+                    其中数据存储层面向任务一，构建了弹性图式数据模型与拓扑结构，并融合了分片存储策略提升存储可扩展性；
+                    共识执行层面向任务二，利用RBC或CBC进行区块广播，并使用高效并发控制机制进行冲突检测与事务排序，实现低延迟的图式共识与执行；
+                    查询检索层则面向任务三，实现可验证高效查询，支持时态数据查询以及图结构数据查询
                   </p>
                 </div>
               </Card.Content>
