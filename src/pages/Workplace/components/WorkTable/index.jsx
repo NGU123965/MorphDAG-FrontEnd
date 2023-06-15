@@ -110,6 +110,7 @@ const WorkTable = (props) => {
 
   return (
     <div>
+      <div colSpan={12} style={{ background: '#ffffff', height: '35px' }} />
       <Box spacing={0}>
         <Cell colSpan={12}>
           <Card
@@ -117,7 +118,7 @@ const WorkTable = (props) => {
             className={styles.CardContent}
           >
             <Card.Content>
-              <span className={styles.title} >任务二架构图</span>
+              <span className={styles.title} >低延迟的一致性共识算法与高效图式事务处理机制</span>
             </Card.Content>
           </Card>
         </Cell>
@@ -131,6 +132,8 @@ const WorkTable = (props) => {
             </Card.Content>
           </Card>
         </Cell>
+        <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
+        <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
         <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
           <Card.Content>
             <span className={styles.cardTitle} >系统状态一致性详情</span>
@@ -205,6 +208,7 @@ const WorkTable = (props) => {
           </Card.Content>
         </Card>
       </Box>
+      <div colSpan={12} style={{ background: '#f2f2f2', height: '50px' }} />
     </div>
   );
 };

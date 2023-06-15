@@ -45,18 +45,16 @@ const WorkTable = (props) => {
                   <img src={pic} alt="总图标" className={styles.architectureImage} style={{ objectFit: 'cover', width: '50%', height: '50%' }} />
                 </div>
                 <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'center', fontSize: '40px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', marginTop: '-20px' }}>
-                    原型系统MorphDAG
+                  <p style={{ textAlign: 'left', fontSize: '40px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', marginTop: '-20px', marginLeft: '100px' }}>
+                    MorphDAG
                   </p>
 
-                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginTop: '20px' }}>
-                    &emsp;&emsp;原型系统MorphDAG1.0的版本分为四层，由下至上依次是：数据层、共识层、执行层和查询层。
+                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginLeft: '100px' }}>
+                    原型系统MorphDAG隶属于十四五国家重点研发计划青年科学家项目“高并发可扩展区块链存储的基础理论和方法研究”。
                   </p>
 
-                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5' }}>
-                    &emsp;&emsp;数据层面向任务一，构建了弹性图式数据模型与拓扑结构，并融合了分片存储策略提升存储可扩展性；
-                    共识层面向任务二，利用RBC或CBC进行区块广播，并采用引用计数机制，实现低延迟的图式共识；执行层面向任务二，包含区块全序确定机制以及负载感知的事务处理机制；
-                    查询层则面向任务三，实现可验证高效查询，支持时态数据查询以及图结构数据查询。
+                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginLeft: '100px' }}>
+                    该系统采用Go语言开发，针对如何破解图式区块链面临的“性能-安全”矛盾难题，分别在图式弹性数据模型、动态共识执行方法、高效查询机制三个方面取得了进展。
                   </p>
                 </div>
               </Card.Content>
@@ -73,14 +71,14 @@ const WorkTable = (props) => {
                     src={pic1}
                     alt="完成"
                     className={styles.architectureImage}
-                    style={{ objectFit: 'cover', width: '30%', height: '30%', margin: '0 0 0 0' }}
+                    style={{ objectFit: 'cover', width: '25%', height: '25%', marginLeft: '50px' }}
                   />
                 </div>
                 <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'left', fontSize: '35px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
+                  <p style={{ textAlign: 'left', fontSize: '30px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
                     &gt;5x
                   </p>
-                  <p style={{ textAlign: 'left', fontSize: '25px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
+                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
                     高并发可扩展存储
                   </p>
                 </div>
@@ -89,14 +87,14 @@ const WorkTable = (props) => {
                     src={pic1}
                     alt="完成"
                     className={styles.architectureImage}
-                    style={{ objectFit: 'cover', width: '30%', height: '30%', margin: '0 0 0 0' }}
+                    style={{ objectFit: 'cover', width: '25%', height: '25%', marginLeft: '50px' }}
                   />
                 </div>
                 <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'left', fontSize: '35px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
+                  <p style={{ textAlign: 'left', fontSize: '30px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
                     10TB+
                   </p>
-                  <p style={{ textAlign: 'left', fontSize: '25px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
+                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
                     高效一致性共识执行
                   </p>
                 </div>
@@ -105,14 +103,14 @@ const WorkTable = (props) => {
                     src={pic1}
                     alt="完成"
                     className={styles.architectureImage}
-                    style={{ objectFit: 'cover', width: '30%', height: '30%', margin: '0 0 0 0' }}
+                    style={{ objectFit: 'cover', width: '25%', height: '25%', marginLeft: '50px' }}
                   />
                 </div>
                 <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'left', fontSize: '35px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
+                  <p style={{ textAlign: 'left', fontSize: '30px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', margin: '-10px 0 0 -80px' }}>
                     &lt;20s
                   </p>
-                  <p style={{ textAlign: 'left', fontSize: '25px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
+                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', fontWeight: 'bold', margin: '-2px 0 0 -80px' }}>
                     高效可验证查询检索
                   </p>
                 </div>
@@ -129,18 +127,16 @@ const WorkTable = (props) => {
                   <img src={lj} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
                 </div>
                 <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'center', fontSize: '40px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', marginTop: '-20px', marginLeft: '200px' }}>
+                  <p style={{ textAlign: 'left', fontSize: '40px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', marginTop: '-20px', marginLeft: '200px' }}>
                     系统架构图
                   </p>
 
-                  <p> </p>
-
                   <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginTop: '20px', marginLeft: '200px' }}>
-                    &emsp;&emsp;原型系统MorphDAG1.0的版本分为四层，由下至上依次是：数据层、共识层、执行层和查询层。
+                    原型系统MorphDAG1.0的版本分为四层，由下至上依次是：数据层、共识层、执行层和查询层。
                   </p>
 
                   <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginLeft: '200px' }}>
-                    &emsp;&emsp;数据层面向任务一，构建了弹性图式数据模型与拓扑结构，并融合了分片存储策略提升存储可扩展性；
+                    数据层面向任务一，构建了弹性图式数据模型与拓扑结构，并融合了分片存储策略提升存储可扩展性；
                     共识层面向任务二，利用RBC或CBC进行区块广播，并采用引用计数机制，实现低延迟的图式共识；执行层面向任务二，包含区块全序确定机制以及负载感知的事务处理机制；
                     查询层则面向任务三，实现可验证高效查询，支持时态数据查询以及图结构数据查询。
                   </p>
@@ -201,7 +197,7 @@ const WorkTable = (props) => {
             </Card>
           </Cell>
 
-          <Cell colSpan={12}>
+          {/* <Cell colSpan={12}>
             <Card
               free
               style={{
@@ -273,7 +269,7 @@ const WorkTable = (props) => {
                 <img src={fig5} alt="子图匹配查询验证耗时对比图" className={styles.architectureImage} />
               </Card.Content>
             </Card>
-          </Cell>
+          </Cell> */}
         </ResponsiveGrid>
       </div>
     </div>

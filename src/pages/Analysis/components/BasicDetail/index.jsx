@@ -135,7 +135,7 @@ const BasicDetail = (props) => {
 
   return (
     <div>
-
+      <div colSpan={12} style={{ background: '#ffffff', height: '35px' }} />
       <Box spacing={0}>
         <Cell colSpan={12}>
           <Card
@@ -143,7 +143,7 @@ const BasicDetail = (props) => {
             className={styles.CardContent}
           >
             <Card.Content>
-              <span className={styles.title} >任务一架构图</span>
+              <span className={styles.title} >弹性图式数据模型与可扩展分片存储策略</span>
             </Card.Content>
           </Card>
         </Cell>
@@ -157,6 +157,10 @@ const BasicDetail = (props) => {
             </Card.Content>
           </Card>
         </Cell>
+
+        <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
+        <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
+
         <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
           <Card.Content ><span className={styles.cardTitle}>存储开销查询</span></Card.Content>
           <Card.Divider />
@@ -229,6 +233,7 @@ const BasicDetail = (props) => {
           </Card.Content>
         </Card>
       </Box>
+      <div colSpan={12} style={{ background: '#f2f2f2', height: '50px' }} />
     </div>
   );
 };
