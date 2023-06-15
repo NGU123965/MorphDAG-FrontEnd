@@ -5,6 +5,7 @@ const Mainpage = lazy(() => import('@/pages/Mainpage'));
 const Analysis = lazy(() => import('@/pages/Analysis'));
 const Workplace = lazy(() => import('@/pages/Workplace'));
 const Function1 = lazy(() => import('@/pages/Function1'));
+const About = lazy(() => import('@/pages/About'));
 
 const routerConfig = [
   {
@@ -26,6 +27,10 @@ const routerConfig = [
       {
         path: '/dashboard/function1',
         component: Function1,
+      },
+      {
+        path: '/dashboard/about',
+        component: About,
       },
       {
         path: '/',

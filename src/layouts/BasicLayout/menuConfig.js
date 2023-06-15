@@ -19,7 +19,6 @@ const asideMenuConfig = [
     name: '查询性能评估',
     path: '/dashboard/function1',
     icon: 'calendar',
-    font: 36,
   },
 ];
 export { headerMenuConfig, asideMenuConfig };
