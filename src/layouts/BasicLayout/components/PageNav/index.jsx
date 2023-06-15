@@ -52,8 +52,8 @@ function getSubMenuOrItem(item, index, auth) {
   }
 
   const navItem = (
-    <NavItem key={item.path} icon={item.icon}>
-      <Link to={item.path} style={{ fontSize: '19.4px' }}>{item.name}</Link>
+    <NavItem key={item.path} icon={item.icon} className={styles.LinkStyle}>
+      <Link to={item.path} className={styles.LinkStyle} ><span className={styles.LinkStyle}>{item.name}</span></Link>
     </NavItem>
   );
   return navItem;
@@ -81,7 +81,7 @@ const Navigation = (props, context) => {
   }, [pathname]);
   return (
     <Nav
-      type="normal"
+      type="primary"
       direction="hoz"
       openKeys={openKeys}
       selectedKeys={[pathname]}
