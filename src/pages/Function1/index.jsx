@@ -12,12 +12,13 @@ const Function1 = () => {
   return (
     <ResponsiveGrid gap={0}>
       <Cell colSpan={12}>
+        <div colSpan={12} style={{ background: '#ffffff', height: '35px' }} />
         <Card
           free
           className={styles.CardContent}
         >
           <Card.Content>
-            <span className={styles.title} >任务三架构图</span>
+            <span className={styles.title} >图式可验证分层索引机制与高效查询处理优化策略</span>
           </Card.Content>
         </Card>
       </Cell>
@@ -30,12 +31,15 @@ const Function1 = () => {
             <img src={fig1} alt="度量指标图" className={styles.architectureImage} />
           </Card.Content>
         </Card>
+        <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
+        <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
       </Cell>
       <Cell colSpan={6}>
         <FunctionDetail1 />
       </Cell>
       <Cell colSpan={6}>
         <FunctionDetail2 />
+        <div colSpan={12} style={{ background: '#f2f2f2', height: '50px' }} />
       </Cell>
     </ResponsiveGrid>
   );
