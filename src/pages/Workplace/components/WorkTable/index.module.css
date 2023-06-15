@@ -172,7 +172,7 @@
 }
 
 .architectureImage {
-  width: 80%;  
+  width: auto;  
   height: auto;
   display: inline-block; 
 }
@@ -190,7 +190,7 @@
 }
 
 .CardContent {
-  width: 100%;
+  width: auto;
   height: auto;
   display: flex;
   justify-content: center;

@@ -120,7 +120,7 @@ const WorkTable = (props) => {
           </Cell>
 
           <Cell colSpan={12}>
-            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#ffffff' }}>
+            <Card free className={styles.CardContent}>
               <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
               <Card.Content className={styles.flexContainer}>
                 <div className={styles.imageContainer} style={{ position: 'relative', left: '30%', transform: 'translateX(-50%)' }}>
@@ -154,6 +154,7 @@ const WorkTable = (props) => {
             <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }} >
               <Card.Content>
                 <span className={styles.smalltitle}>
+                  <br />
                   功能<br />
                   ______
                 </span>
