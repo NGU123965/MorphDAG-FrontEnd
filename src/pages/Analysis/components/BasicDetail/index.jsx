@@ -203,7 +203,7 @@ const BasicDetail = (props) => {
                 cell={(value, index, record) => (<div style={{ fontSize: 'x-large' }}>{value}</div>)}
               />
               <Table.Column
-                title={<div className={styles.tableTitle}>键数据大小</div>}
+                title={<div className={styles.tableTitle}>账本数据大小</div>}
                 dataIndex="chaindataMB"
                 width={200}
                 align="center"
