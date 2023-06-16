@@ -120,8 +120,8 @@ const WorkTable = (props) => {
           </Cell>
 
           <Cell colSpan={12}>
+            <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
             <Card free className={styles.CardContent}>
-              <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
               <Card.Content className={styles.flexContainer}>
                 <div className={styles.imageContainer} style={{ position: 'relative', left: '30%', transform: 'translateX(-50%)' }}>
                   <img src={lj} alt="系统架构图" className={styles.architectureImage} style={{ objectFit: 'cover', width: '110%', height: '110%' }} />
@@ -142,9 +142,9 @@ const WorkTable = (props) => {
                   </p>
                 </div>
               </Card.Content>
-              <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
-              <div colSpan={12} style={{ background: '#f2f2f2', height: '35px' }} />
             </Card>
+            <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
+            <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
           </Cell>
 
         </ResponsiveGrid>
@@ -192,10 +192,9 @@ const WorkTable = (props) => {
                     );
                   })}
                 </Box>
-
               </Card.Content>
-              <div colSpan={12} style={{ background: '#f2f2f2', height: '50px' }} />
             </Card>
+            <div colSpan={12} style={{ background: '#f2f2f2', height: '75px' }} />
           </Cell>
 
           {/* <Cell colSpan={12}>
