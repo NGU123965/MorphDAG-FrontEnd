@@ -9,7 +9,7 @@ import {
 } from '@alifd/next';
 import mock from './mock';
 import styles from './index.module.css';
-import pic from './logo.png';
+import pic from './intro.png';
 import pic1 from './icon.png';
 import lj from './架构图.jpg';
 import fig1 from './指标一.jpg';
@@ -39,33 +39,20 @@ const WorkTable = (props) => {
       <div className={styles.workTableContent}>
         <ResponsiveGrid gap={0}>
           <Cell colSpan={12}>
-            <Card free style={{ height: '100%', width: '100%' }}>
+            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
               <Card.Content className={styles.flexContainer}>
-                <div className={styles.imageContainer} style={{ position: 'relative', left: '30%', transform: 'translateX(-50%)' }}>
-                  <img src={pic} alt="总图标" className={styles.architectureImage} style={{ objectFit: 'cover', width: '50%', height: '50%' }} />
-                </div>
-                <div className={styles.descriptionContainer}>
-                  <p style={{ textAlign: 'left', fontSize: '40px', lineHeight: '1.5', color: 'black', fontWeight: 'bold', marginTop: '-20px', marginLeft: '100px' }}>
-                    MorphDAG
-                  </p>
-
-                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginLeft: '100px' }}>
-                    原型系统MorphDAG隶属于十四五国家重点研发计划青年科学家项目“高并发可扩展区块链存储的基础理论和方法研究”。
-                  </p>
-
-                  <p style={{ textAlign: 'left', fontSize: '20px', lineHeight: '1.5', marginLeft: '100px' }}>
-                    该系统采用Go语言开发，针对如何破解图式区块链面临的“性能-安全”矛盾难题，分别在图式弹性数据模型、动态共识执行方法、高效查询机制三个方面取得了进展。
-                  </p>
+                <div className={styles.imageContainer} style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)' }}>
+                  <img src={pic} alt="总图标" className={styles.architectureImage} style={{ objectFit: 'cover', width: '80%', height: '50%' }} />
                 </div>
               </Card.Content>
               <div colSpan={12} style={{ background: '#ffffff', height: '25px' }} />
             </Card>
           </Cell>
 
-          <Cell colSpan={12}>
-            <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
-              <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
-              <Card.Content className={`${styles.flexContainer} ${styles.contentContainer}`}>
+          {/* <Cell colSpan={12}> */}
+          {/* <Card free style={{ height: '100%', width: '100%', backgroundColor: '#f2f2f2' }}>
+              <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} /> */}
+          {/* <Card.Content className={`${styles.flexContainer} ${styles.contentContainer}`}>
                 <div className={styles.imageContainer}>
                   <img
                     src={pic1}
@@ -114,10 +101,10 @@ const WorkTable = (props) => {
                     高效可验证查询检索
                   </p>
                 </div>
-              </Card.Content>
-              <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} />
-            </Card>
-          </Cell>
+              </Card.Content> */}
+          {/* <div colSpan={12} style={{ background: '#f2f2f2', height: '25px' }} /> */}
+          {/* </Card>
+          </Cell> */}
 
           <Cell colSpan={12}>
             <Card free className={styles.CardContent}>

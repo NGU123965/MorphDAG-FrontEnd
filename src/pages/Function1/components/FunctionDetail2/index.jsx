@@ -84,7 +84,7 @@ const FunctionDetail2 = (props) => {
               <Search
                 type="primary"
                 hasIcon={false}
-                searchText="查询交易"
+                searchText="查询区块"
                 onSearch={onSearchClick}
                 placeholder="请输入轮次号"
                 size="large"
