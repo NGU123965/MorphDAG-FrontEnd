@@ -39,7 +39,7 @@ const Function1 = () => {
       </Cell>
       <Cell colSpan={6}>
         <FunctionDetail2 />
-        <div colSpan={12} style={{ background: '#f2f2f2', height: '50px' }} />
+        <div colSpan={12} style={{ background: '#f2f2f2', height: '75px' }} />
       </Cell>
     </ResponsiveGrid>
   );
