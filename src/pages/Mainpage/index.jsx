@@ -16,7 +16,7 @@ const Mainpage = (props) => {
   const entranceList = dataSource;
 
   return (
-    <div className="container" style={{ background: 'white' }}>
+    <div className="container" style={{ backgroundColor: '#f2f2f2' }}>
       {/* <ResponsiveGrid gap={0} >
         <Cell colSpan={12}>
           <PageHeader
