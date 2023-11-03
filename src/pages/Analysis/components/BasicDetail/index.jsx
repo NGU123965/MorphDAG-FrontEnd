@@ -11,6 +11,7 @@ import {
 } from '@alifd/next';
 import styles from './index.module.css';
 import fig1 from './任务一.jpg';
+// import { Item } from '@alifd/next/types/breadcrumb';
 
 const { Cell } = ResponsiveGrid;
 
@@ -22,6 +23,8 @@ const BasicDetail = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(8);
   const [searchData, setSearchData] = useState([]);
+  const [tableDataWithPercentage, setTableDataWithPercentage] = useState([]);
+
   // eslint-disable-next-line max-len
   const paths = ['./Records-200/info-0.json', './Records-200/info-1.json', './Records-200/info-2.json', './Records-200/info-3.json', './Records-200/info-4.json', './Records-200/info-5.json', './Records-200/info-6.json', './Records-200/info-7.json'];
 
@@ -40,6 +43,27 @@ const BasicDetail = (props) => {
         }));
         data.push(...jsonData);
       }
+
+      // 替换为指定轮次的数据
+      // const roundNumber = parseInt(searchValue);
+      // const roundData = data.filter((item) => item.round === roundNumber);
+      // // 计算新的表格数据，节点存储开销降低比例
+      // const newDataWithPercentage = data.map((item) => {
+      //   // const roundData = data.filter((d) => d.round === item.round);
+      //   const totalChaindataMB = roundData.reduce((total, d) => {
+      //     const chaindataMatch = d.chaindataMB.match(/\d+/);
+      //     return total + (chaindataMatch ? parseInt(chaindataMatch[0]) : 0);
+      //   }, 0);
+      //   const chaindataMatch = item.chaindataMB.match(/\d+/);
+      //   const chaindataMB = chaindataMatch ? parseInt(chaindataMatch[0]) : 0;
+      //   const percentage = totalChaindataMB !== 0 ? (chaindataMB / totalChaindataMB) * 100 : 0;
+      //   return { ...item, percentage: `${percentage.toFixed(2)}%` };
+      // });
+      // setTableDataWithPercentage(newDataWithPercentage);
+      // setTableData(newDataWithPercentage.slice(0, pageSize));
+      // setSearchData(newDataWithPercentage);
+      // setOriginalData(data);
+
       // setTableData(data.slice(0, pageSize));
       // setSearchData(data);
       setTableData([]);
@@ -47,16 +71,36 @@ const BasicDetail = (props) => {
       setOriginalData(data);
     }
     fetchData();
-  }, []);
+  }, [searchValue]);
 
   const onSearchClick = () => {
     if (searchValue != '') {
       setLoading(true);
       const filteredData = originalData.filter((data) => data.round === parseInt(searchValue));
-      setTableData(filteredData.slice(0, pageSize));
-      setSearchData(filteredData);
+      // 计算新的表格数据，包括节点存储开销降低比例
+      const newDataWithPercentage = filteredData.map((item) => {
+        const totalChaindataMB = filteredData.reduce((total, d) => {
+          const chaindataMatch = d.chaindataMB.match(/\d+/);
+          return total + (chaindataMatch ? parseInt(chaindataMatch[0]) : 0);
+        }, 0);
+
+        const chaindataMatch = item.chaindataMB.match(/\d+/);
+        const chaindataMB = chaindataMatch ? parseInt(chaindataMatch[0]) : 0;
+
+        const percentage = totalChaindataMB !== 0 ? (1 - chaindataMB / totalChaindataMB) * 100 : 0;
+
+        return { ...item, percentage: `${percentage.toFixed(2)}%` };
+      });
+
+      setTableDataWithPercentage(newDataWithPercentage);
+      setTableData(newDataWithPercentage.slice(0, pageSize));
+      setSearchData(newDataWithPercentage);
       setCurrentPage(1);
       setLoading(false);
+      // setTableData(filteredData.slice(0, pageSize));
+      // setSearchData(filteredData);
+      // setCurrentPage(1);
+      // setLoading(false);
     } else {
       // setTableData(originalData.slice(0, pageSize));
       // setSearchData(originalData);
@@ -205,6 +249,14 @@ const BasicDetail = (props) => {
               <Table.Column
                 title={<div className={styles.tableTitle}>账本数据大小</div>}
                 dataIndex="chaindataMB"
+                width={200}
+                align="center"
+                cell={renderLevel1}
+                style={{ fontSize: 'x-large' }}
+              />
+              <Table.Column
+                title={<div className={styles.tableTitle}>节点存储开销降低比例</div>}
+                dataIndex="percentage"
                 width={200}
                 align="center"
                 cell={renderLevel1}
