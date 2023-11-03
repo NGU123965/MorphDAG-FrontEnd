@@ -267,7 +267,7 @@ const BasicDetail = (props) => {
                 style={{ fontSize: 'x-large' }}
               />
               <Table.Column
-                title={<div className={styles.tableTitle}>节点存储开销降低比例</div>}
+                title={<div className={styles.tableTitle}>节点存储开销降低</div>}
                 dataIndex="percentage"
                 width={200}
                 align="center"
