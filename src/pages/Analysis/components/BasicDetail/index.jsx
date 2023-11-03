@@ -79,17 +79,28 @@ const BasicDetail = (props) => {
       const filteredData = originalData.filter((data) => data.round === parseInt(searchValue));
       // 计算新的表格数据，包括节点存储开销降低比例
       const newDataWithPercentage = filteredData.map((item) => {
-        const totalChaindataMB = filteredData.reduce((total, d) => {
+        const totalDataSizeMB = filteredData.reduce((total, d) => {
           const chaindataMatch = d.chaindataMB.match(/\d+/);
-          return total + (chaindataMatch ? parseInt(chaindataMatch[0]) : 0);
+          const statedataMatch = d.statedataMB.match(/\d+/);
+          const chaindataMB = chaindataMatch ? parseInt(chaindataMatch[0]) : 0;
+          const statedataMB = statedataMatch ? parseInt(statedataMatch[0]) : 0;
+          return total + chaindataMB + statedataMB;
         }, 0);
 
         const chaindataMatch = item.chaindataMB.match(/\d+/);
+        const statedataMatch = item.statedataMB.match(/\d+/);
         const chaindataMB = chaindataMatch ? parseInt(chaindataMatch[0]) : 0;
+        const statedataMB = statedataMatch ? parseInt(statedataMatch[0]) : 0;
 
-        const percentage = totalChaindataMB !== 0 ? (1 - chaindataMB / totalChaindataMB) * 100 : 0;
-
-        return { ...item, percentage: `${percentage.toFixed(2)}%` };
+        // 百分比显示
+        // const percentage = totalChaindataMB !== 0 ? (1 - chaindataMB / totalChaindataMB) * 100 : 0;
+        // 倍数显示
+        // const percentage = totalChaindataMB !== 0 ? (totalChaindataMB / chaindataMB) : 0;
+        const percentage = totalDataSizeMB !== 0 ? (totalDataSizeMB / (chaindataMB + statedataMB)) : 0;
+        const newSize = chaindataMB + statedataMB;
+        // 更新节点存储开销大小列
+        item.chaindataMB = `${newSize} MB`;
+        return { ...item, percentage: `${percentage.toFixed(2)}倍` };
       });
 
       setTableDataWithPercentage(newDataWithPercentage);
@@ -104,6 +115,7 @@ const BasicDetail = (props) => {
     } else {
       // setTableData(originalData.slice(0, pageSize));
       // setSearchData(originalData);
+      setTableDataWithPercentage([]);
       setTableData([]);
       setSearchData([]);
     }
@@ -247,7 +259,7 @@ const BasicDetail = (props) => {
                 cell={(value, index, record) => (<div style={{ fontSize: 'x-large' }}>{value}</div>)}
               />
               <Table.Column
-                title={<div className={styles.tableTitle}>账本数据大小</div>}
+                title={<div className={styles.tableTitle}>节点存储开销大小</div>}
                 dataIndex="chaindataMB"
                 width={200}
                 align="center"
@@ -262,14 +274,14 @@ const BasicDetail = (props) => {
                 cell={renderLevel1}
                 style={{ fontSize: 'x-large' }}
               />
-              <Table.Column
+              {/* <Table.Column
                 title={<div className={styles.tableTitle}>状态数据大小</div>}
                 dataIndex="statedataMB"
                 width={200}
                 align="center"
                 cell={renderLevel2}
                 style={{ fontSize: 'x-large' }}
-              />
+              /> */}
             </Table>
             <p> </p>
             <Pagination
