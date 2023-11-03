@@ -174,10 +174,10 @@ const BasicDetail = (props) => {
     let color;
     if (size < 10) {
       color = 'green';
-    } else if (size < 30) {
-      color = 'orange';
+    } else if (size < 100) {
+      color = 'green';
     } else {
-      color = 'red';
+      color = 'green';
     }
 
     return (
@@ -271,7 +271,7 @@ const BasicDetail = (props) => {
                 dataIndex="percentage"
                 width={200}
                 align="center"
-                cell={renderLevel1}
+                cell={renderLevel2}
                 style={{ fontSize: 'x-large' }}
               />
               {/* <Table.Column
